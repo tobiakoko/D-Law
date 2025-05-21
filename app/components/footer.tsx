@@ -1,0 +1,132 @@
+interface MenuItem {
+  title: string;
+  links: {
+    text: string;
+    url: string;
+  }[];
+}
+
+interface Footer2Props {
+  logo?: {
+    url: string;
+    src: string;
+    alt: string;
+    title: string;
+  };
+  tagline?: string;
+  menuItems?: MenuItem[];
+  copyright?: string;
+  bottomLinks?: {
+    text: string;
+    url: string;
+  }[];
+}
+
+const currentYear = new Date().getFullYear();
+
+const Footer = ({
+  logo = {
+    src: "https://shadcnblocks.com/images/block/block-1.svg",
+    alt: "blocks for shadcn/ui",
+    title: "Osei K. Prempeh, P.A.",
+    url: "https://www.shadcnblocks.com",
+  },
+  tagline = "Attorney, Mediator, and counselor at law",
+  menuItems = [
+    {
+      title: "Explore",
+      links: [
+        { text: "Overview", url: "#" },
+        { text: "Pricing", url: "#" },
+        { text: "Marketplace", url: "#" },
+        { text: "Features", url: "#" },
+        { text: "Integrations", url: "#" },
+        { text: "Pricing", url: "#" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { text: "About", url: "#" },
+        { text: "Services", url: "#" },
+        { text: "location", url: "#" },
+        { text: "Careers", url: "#" },
+        { text: "Contact", url: "#" },
+        { text: "Privacy", url: "#" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { text: "Help", url: "#" },
+        { text: "Sales", url: "#" },
+        { text: "Advertise", url: "#" },
+      ],
+    },
+    {
+      title: "Social",
+      links: [
+        { text: "Twitter", url: "#" },
+        { text: "Instagram", url: "#" },
+        { text: "LinkedIn", url: "#" },
+      ],
+    },
+  ],
+  copyright = `© ${currentYear} The law offices of Osei K. Prempeh, P.A. All rights reserved.`,
+  bottomLinks = [
+    { text: "Terms and Conditions", url: "#" },
+    { text: "Privacy Policy", url: "#" },
+  ],
+}: Footer2Props) => {
+  return (
+    <section className="pt-32 pb-10 bg-slate-400 text-white">
+      <div className="container mx-auto px-10 md:px-0">
+        <footer>
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
+            <div className="col-span-2 mb-8 lg:mb-0">
+              <div className="flex items-center gap-2 lg:justify-start">
+                <a href="https://shadcnblocks.com">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    title={logo.title}
+                    className="h-10"
+                  />
+                </a>
+                <p className="text-xl font-semibold">{logo.title}</p>
+              </div>
+              <p className="mt-4 font-bold">{tagline}</p>
+            </div>
+            {menuItems.map((section, sectionIdx) => (
+              <div key={sectionIdx}>
+                <h3 className="mb-4 font-bold">{section.title}</h3>
+                <ul className="space-y-4 text-muted-foreground">
+                  {section.links.map((link, linkIdx) => (
+                    <li
+                      key={linkIdx}
+                      className="font-medium hover:text-primary"
+                    >
+                      <a href={link.url}>{link.text}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
+            <p>{copyright}</p>
+            <ul className="flex gap-4">
+              {bottomLinks.map((link, linkIdx) => (
+                <li key={linkIdx} className="underline hover:text-primary">
+                  <a href={link.url}>{link.text}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </section>
+  );
+};
+
+export { Footer };
