@@ -1,3 +1,13 @@
+import { 
+  ChevronRight, Scale, Phone, Mail, MapPin, 
+  Clock, Globe, Facebook, Twitter, Linkedin, Instagram,
+  Smartphone,
+  Printer
+} from 'lucide-react';
+import { NavLink } from 'react-router';
+import DarkLogo from '~/assets/logo-light.png';
+import Logo from '~/components/logo';
+
 interface MenuItem {
   title: string;
   links: {
@@ -6,7 +16,7 @@ interface MenuItem {
   }[];
 }
 
-interface Footer2Props {
+interface FooterProps {
   logo?: {
     url: string;
     src: string;
@@ -26,107 +36,291 @@ const currentYear = new Date().getFullYear();
 
 const Footer = ({
   logo = {
-    src: "https://shadcnblocks.com/images/block/block-1.svg",
-    alt: "blocks for shadcn/ui",
+    src: DarkLogo,
+    alt: "Osei K. Prempeh P.A. Logo",
     title: "Osei K. Prempeh, P.A.",
-    url: "https://www.shadcnblocks.com",
+    url: "/",
   },
-  tagline = "Attorney, Mediator, and counselor at law",
+  tagline = "Attorney, Mediator, and Counselor at Law",
   menuItems = [
     {
-      title: "Explore",
+      title: "Practice Areas",
       links: [
-        { text: "Overview", url: "#" },
-        { text: "Pricing", url: "#" },
-        { text: "Marketplace", url: "#" },
-        { text: "Features", url: "#" },
-        { text: "Integrations", url: "#" },
-        { text: "Pricing", url: "#" },
+        { text: "Immigration", url: "#" },
+        { text: "Personal Injury", url: "#" },
+        { text: "International Business", url: "#" },
+        { text: "Family Law", url: "#" },
+        { text: "Contract Disputes", url: "#" },
+        { text: "Criminal Law", url: "#" },
       ],
     },
     {
-      title: "Company",
+      title: "Firm",
       links: [
-        { text: "About", url: "#" },
-        { text: "Services", url: "#" },
-        { text: "location", url: "#" },
-        { text: "Careers", url: "#" },
-        { text: "Contact", url: "#" },
-        { text: "Privacy", url: "#" },
+        { text: "About", url: "#about" },
+        { text: "Practice Areas", url: "#" },
+        { text: "Client Testimonials", url: "#testimonials" },
+        { text: "Contact", url: "#contact" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { text: "Help", url: "#" },
-        { text: "Sales", url: "#" },
-        { text: "Advertise", url: "#" },
-      ],
-    },
-    {
-      title: "Social",
-      links: [
-        { text: "Twitter", url: "#" },
-        { text: "Instagram", url: "#" },
-        { text: "LinkedIn", url: "#" },
+        { text: "Legal Resources", url: "#" },
+        { text: "FAQ", url: "#faq" },
+        { text: "Consultation", url: "#contact" },
+        { text: "Case Evaluation", url: "#" },
       ],
     },
   ],
-  copyright = `© ${currentYear} The law offices of Osei K. Prempeh, P.A. All rights reserved.`,
+  copyright = `© ${currentYear} The Law Offices of Osei K. Prempeh, P.A. All rights reserved.`,
   bottomLinks = [
-    { text: "Terms and Conditions", url: "#" },
     { text: "Privacy Policy", url: "#" },
+    { text: "Terms of Service", url: "#" },
+    { text: "Disclaimer", url: "#" },
   ],
-}: Footer2Props) => {
+}: FooterProps) => {
   return (
-    <section className="pt-32 pb-10 bg-slate-400 text-white">
-      <div className="container mx-auto px-10 md:px-0">
-        <footer>
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
-            <div className="col-span-2 mb-8 lg:mb-0">
-              <div className="flex items-center gap-2 lg:justify-start">
-                <a href="https://shadcnblocks.com">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    title={logo.title}
-                    className="h-10"
+    <footer 
+      className="relative"
+      style={{ backgroundColor: 'var(--color-brand-navy, #1A2A4F)' }}
+    >
+      {/* Main Footer Content */}
+      <div className="py-20 px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            {/* Firm Information - Takes up more space */}
+            <div className="lg:col-span-5">
+              {/* Logo and Firm Name */}
+              <div className="flex items-center mb-8">
+                <Logo />
+                <div>
+                  <h2 
+                    className="text-2xl lg:text-3xl font-light"
+                    style={{ 
+                      color: 'var(--color-brand-gold, #C6A24F)',
+                      fontFamily: 'var(--font-raleway, serif)'
+                    }}
+                  >
+                    {logo.title}
+                  </h2>
+                  <p 
+                    className="text-lg font-light mt-1"
+                    style={{ color: '#E5E7EB' }}
+                  >
+                    {tagline}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Description */}
+              <p 
+                className="text-lg leading-relaxed mb-10 max-w-md font-light"
+                style={{ color: '#9CA3AF', lineHeight: '1.7' }}
+              >
+                Providing exceptional legal representation with integrity, expertise, 
+                and unwavering commitment to achieving the best outcomes for our clients.
+              </p>
+              
+              {/* Contact Information */}
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <MapPin 
+                    className="w-5 h-5 mr-4 mt-1 flex-shrink-0" 
+                    style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
                   />
-                </a>
-                <p className="text-xl font-semibold">{logo.title}</p>
+                  <div>
+                    <p style={{ color: '#E5E7EB' }}>
+                      3202 N. Howard Ave<br />
+                      Tampa, FL 33607
+                    </p>
+                  </div>
+                </div>
+                
+                
+                {/* Office Phone */}
+                <div className="flex items-start">
+                <Phone
+                  className="w-5 h-5 mr-4 mt-1 flex-shrink-0"
+                  style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                />
+                <div>
+                  <p style={{ color: '#E5E7EB' }}>
+                    Office: (813) 555-0123
+                  </p>
+                </div>
+                </div>
+
+                {/* Fax */}
+                <div className="flex items-start">
+                <Printer
+                  className="w-5 h-5 mr-4 mt-1 flex-shrink-0"
+                  style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                />
+                <div>
+                  <p style={{ color: '#E5E7EB' }}>
+                    Fax: (813) 555-0124
+                  </p>
+                </div>
+                </div>
+
+                {/* Cell Phone */}
+                <div className="flex items-start">
+                <Smartphone
+                  className="w-5 h-5 mr-4 mt-1 flex-shrink-0"
+                  style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                />
+                <div>
+                  <p style={{ color: '#E5E7EB' }}>
+                    Cell: (813) 555-0125
+                  </p>
+                </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <Mail 
+                    className="w-5 h-5 mr-4" 
+                    style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                  />
+                  <a 
+                    href="mailto:info@oseiprempeh.com"
+                    className="hover:opacity-75 transition-opacity"
+                    style={{ color: '#E5E7EB' }}
+                  >
+                    info@oseiprempeh
+                  </a>
+                </div>
+                <div className="flex items-start">
+                  <Mail
+                    className="w-5 h-5 mr-4 mt-1 flex-shrink-0"
+                    style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                  />
+                  <div>
+                    <p style={{ color: '#E5E7EB' }}>
+                      P.O. Box 27384<br />
+                      Tampa, FL 33623
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <Clock 
+                    className="w-5 h-5 mr-4" 
+                    style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                  />
+                  <p style={{ color: '#E5E7EB' }}>
+                    Mon - Fri: 8:00 AM - 6:00 PM
+                  </p>
+                </div>
               </div>
-              <p className="mt-4 font-bold">{tagline}</p>
+
+              {/* Social Media */}
+              <div className="flex space-x-4 mt-8">
+                {[
+                  { icon: Facebook, href: "#" },
+                  { icon: Twitter, href: "#" },
+                  { icon: Linkedin, href: "#" },
+                  { icon: Instagram, href: "#" }
+                ].map(({ icon: Icon, href }, index) => (
+                  <a
+                    key={index}
+                    href={href}
+                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    style={{ 
+                      backgroundColor: 'rgba(198, 162, 79, 0.1)',
+                      border: '1px solid rgba(198, 162, 79, 0.3)'
+                    }}
+                  >
+                    <Icon 
+                      className="w-5 h-5" 
+                      style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-            {menuItems.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-4 text-muted-foreground">
-                  {section.links.map((link, linkIdx) => (
-                    <li
-                      key={linkIdx}
-                      className="font-medium hover:text-primary"
-                    >
-                      <a href={link.url}>{link.text}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
-            <p>{copyright}</p>
-            <ul className="flex gap-4">
-              {bottomLinks.map((link, linkIdx) => (
-                <li key={linkIdx} className="underline hover:text-primary">
-                  <a href={link.url}>{link.text}</a>
-                </li>
+
+            {/* Navigation Sections */}
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              {menuItems.map((section, sectionIdx) => (
+                <div key={sectionIdx}>
+                  <h3 
+                    className="text-lg font-semibold mb-8"
+                    style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                  >
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {section.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <a 
+                          href={link.url}
+                          className="group flex items-center transition-all duration-300 hover:translate-x-2"
+                          style={{ color: '#9CA3AF' }}
+                        >
+                          <ChevronRight 
+                            className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                            style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
+                          />
+                          <span className="group-hover:text-white transition-colors duration-300">
+                            {link.text}
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        </footer>
+        </div>
       </div>
-    </section>
+
+      {/* Bottom Bar */}
+      <div 
+        className="border-t px-8 lg:px-16 py-8"
+        style={{ borderColor: 'rgba(198, 162, 79, 0.2)' }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            <div className="text-center lg:text-left">
+              <p style={{ color: '#9CA3AF' }}>
+                {copyright}
+              </p>
+              <p 
+                className="text-sm mt-1"
+                style={{ color: '#6B7280' }}
+              >
+                Licensed to practice law in the State of Florida
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center lg:justify-end gap-6">
+              {bottomLinks.map((link, linkIdx) => (
+                <NavLink
+                  key={linkIdx}
+                  to={link.url}
+                  className="text-sm transition-colors duration-300"
+                  style={{ 
+                    color: '#9CA3AF'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--color-brand-gold, #C6A24F)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#9CA3AF';
+                  }}
+                >
+                  {link.text}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
-export { Footer };
+export default Footer;

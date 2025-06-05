@@ -1,71 +1,183 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "~/components/ui/accordion";
+import { useState } from 'react';
+import { ChevronDown, Plus, Minus } from 'lucide-react';
 
-interface FaqItem {
+interface FAQItem {
   question: string;
   answer: string;
 }
 
-interface FaqProps {
-  heading?: string;
-  items?: FaqItem[];
+interface FAQSectionProps {
+  faqItems: FAQItem[];
 }
 
-const Faq = ({
-  heading = "Frequently asked questions",
-  items = [
-    {
-      question: "What should I bring to the initial consultation?",
-      answer:
-        "It's helpful to bring any relevant documents or information related to your case to the initial consultation. This may include contracts, legal notices, court documents, correspondence, or any other records that are pertinent to your situation. Additionally, come prepared with a list of questions you may have for the attorney, as the consultation is an opportunity to gather information and assess whether the attorney is the right fit for your needs.",
-    },
-    {
-      question: "How can I schedule a consultation with your firm?",
-      answer:
-        "Scheduling a consultation with our firm is easy. You can give us a call at [phone number] or fill out the contact form on our website. Our team will promptly get in touch with you to arrange a convenient time for the consultation. During the consultation, we will discuss your case, answer your questions, and provide an initial assessment of your legal matter.",
-    },
-    {
-      question: "Do I really need a lawyer, or can I handle my legal matters on my own?",
-      answer:
-        "While you have the right to represent yourself, it is highly recommended to seek the assistance of a qualified lawyer. Legal matters can be complex, and an attorney has the knowledge and experience to navigate the legal system effectively. A lawyer can provide valuable advice, ensure your rights are protected, and improve your chances of a favorable outcome.",
-    },
-    {
-      question: "How long will my legal case take to resolve?",
-      answer:
-        "The duration of a legal case depends on various factors, including the complexity of the matter, the court's schedule, and the cooperation of all parties involved. Some cases can be resolved through negotiation or settlement, which may expedite the process. However, litigation can take longer, particularly if the case goes to trial. Your lawyer can provide an estimated timeline based on the specific details of your case.",
-    },
-    {
-      question: "What is the cost of hiring a lawyer?",
-      answer:
-        "The cost of hiring a lawyer can vary depending on several factors, such as the complexity of the case, the attorney's experience, and the location. Some lawyers charge an hourly rate, while others may offer a flat fee or work on a contingency basis. It's best to schedule a consultation to discuss the specifics of your case and get a clear understanding of the associated costs.",
-    },
-  ],
-}: FaqProps) => {
+const FAQSection: React.FC<FAQSectionProps> = ({ faqItems }) => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
   return (
-    <section className="py-32">
-      <div className="container max-w-3xl mx-auto">
-        <h1 className="mb-4 text-3xl font-semibold md:mb-11 md:text-4xl">
-          {heading}
-        </h1>
-        <Accordion type="single" collapsible>
-          {items.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="font-semibold hover:no-underline">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+    <section id='faq' style={{ 
+      backgroundColor: 'var(--color-body-bg, #fbfcfc)',
+      paddingTop: '6rem',
+      paddingBottom: '6rem'
+    }}>
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p style={{ 
+            color: 'var(--color-brand-gold, #C6A24F)',
+            fontSize: 'var(--text-body-small)',
+            letterSpacing: 'var(--letter-spacing-subheader)',
+            textTransform: 'uppercase',
+            fontWeight: 'var(--font-weight-medium)',
+            marginBottom: '1rem'
+          }}>
+            Common Questions
+          </p>
+          <h2 style={{
+            fontSize: 'var(--text-heading-2)',
+            lineHeight: 'var(--text-heading-2--line-height)',
+            fontWeight: 'var(--font-weight-semibold)',
+            color: 'var(--color-heading)',
+            fontFamily: 'var(--font-raleway)',
+            marginBottom: '1.5rem'
+          }}>
+            Frequently Asked Questions
+          </h2>
+          <p style={{
+            fontSize: 'var(--text-body-large)',
+            lineHeight: 'var(--text-body-large--line-height)',
+            color: 'var(--color-brand-gray, #6B7280)',
+            maxWidth: '48rem',
+            margin: '0 auto'
+          }}>
+            Find answers to common inquiries about our legal services and process.
+          </p>
+        </div>
+
+        {/* FAQ Items */}
+        <div className="max-w-4xl mx-auto">
+          {faqItems.map((item, index) => (
+            <div
+              key={index}
+              className="group mb-4 last:mb-0"
+              style={{
+                borderBottom: '1px solid var(--color-form-border)',
+                paddingBottom: '1.5rem',
+                paddingTop: index === 0 ? '0' : '1.5rem'
+              }}
+            >
+              <button
+                  className="w-full text-left focus:outline-none focus:ring-2 focus:ring-offset-2"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={openFAQ === index}
+                >
+                <div className="flex justify-between items-start gap-4">
+                  <h3 style={{
+                    fontSize: 'var(--text-heading-5)',
+                    lineHeight: 'var(--text-heading-5--line-height)',
+                    fontWeight: 'var(--font-weight-semibold)',
+                    color: 'var(--color-heading)',
+                    fontFamily: 'var(--font-raleway)',
+                    textAlign: 'left',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    {item.question}
+                  </h3>
+                  
+                  <div 
+                    className="flex-shrink-0 mt-1"
+                    style={{
+                      width: '24px',
+                      height: '24px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderRadius: '50%',
+                      backgroundColor: openFAQ === index 
+                        ? 'var(--color-primary)' 
+                        : 'var(--color-form-border)',
+                      transition: 'all 0.3s ease',
+                      transform: openFAQ === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }}
+                  >
+                    <ChevronDown 
+                      size={16} 
+                      style={{ 
+                        color: openFAQ === index 
+                          ? 'var(--color-form-placeholder)' 
+                          : 'var(--color-brand-gray)' 
+                      }} 
+                    />
+                  </div>
+                </div>
+              </button>
+
+              {/* Answer Content */}
+              <div
+                style={{
+                  maxHeight: openFAQ === index ? '1000px' : '0',
+                  overflow: 'hidden',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  opacity: openFAQ === index ? 1 : 0
+                }}
+              >
+                <div style={{ paddingTop: '1rem', paddingRight: '2rem' }}>
+                  <p style={{
+                    fontSize: 'var(--text-body-regular)',
+                    lineHeight: 'var(--text-body-regular--line-height)',
+                    color: 'var(--color-brand-gray, #6B7280)',
+                    fontFamily: 'var(--font-raleway)'
+                  }}>
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
+
+        {/* Call to Action */}
+        <div 
+          id='contact'
+          className="text-center mt-12 p-8 rounded-lg"
+          style={{ backgroundColor: 'rgba(174, 132, 75, 0.05)' }}
+        >
+          <h3 style={{
+            fontSize: 'var(--text-heading-4)',
+            lineHeight: 'var(--text-heading-4--line-height)',
+            fontWeight: 'var(--font-weight-semibold)',
+            color: 'var(--color-heading)',
+            marginBottom: '0.5rem'
+          }}>
+            Still have questions?
+          </h3>
+          <p style={{
+            fontSize: 'var(--text-body-regular)',
+            color: 'var(--color-brand-gray)',
+            marginBottom: '1.5rem'
+          }}>
+            Contact our legal team for personalized assistance with your case.
+          </p>
+          <button 
+            className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+            style={{
+              backgroundColor: 'var(--color-primary)',
+              color: 'var(--color-form-placeholder)',
+              fontSize: 'var(--text-body-regular)',
+              fontWeight: 'var(--font-weight-medium)',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            Contact Us Today
+          </button>
+        </div>
       </div>
     </section>
   );
 };
 
-export { Faq };
+export default FAQSection;
