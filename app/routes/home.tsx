@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import Testimonials from "~/components/Testimonials";
-import HeroSection from "~/components/HeroSection";
+import HeroSection from "~/components/herosection";
 import FAQSection from "~/components/faq";
 import PracticeAreas from "~/components/PracticeArea";
 
