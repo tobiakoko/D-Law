@@ -114,7 +114,7 @@ const practiceAreas = [
 
 export default function Home() {
   return (
-      <main className="min-h-screen overflow-x-hidden">
+      <main className="min-h-screen overflow-x-hidden bg-body-bg font-raleway">
         <HeroSection />
         <PracticeAreas practiceAreas={practiceAreas} />
         <Testimonials testimonials={testimonials} />

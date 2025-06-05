@@ -13,10 +13,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Layout() {
     return (
-        <body className="min-h-screen bg-body-bg font-raleway">
+        <>
             <Navigation />
             <Outlet />
             <Footer />
-        </body>
+        </>
     );
 }

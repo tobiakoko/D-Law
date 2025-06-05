@@ -1,8 +1,5 @@
 import { 
-  ChevronRight, Scale, Phone, Mail, MapPin, 
-  Clock, Globe, Facebook, Twitter, Linkedin, Instagram,
-  Smartphone,
-  Printer
+  ChevronRight, Scale, Phone, Mail, MapPin, Clock, Smartphone, Printer
 } from 'lucide-react';
 import { NavLink } from 'react-router';
 import DarkLogo from '~/assets/logo-light.png';
@@ -213,31 +210,6 @@ const Footer = ({
                     Mon - Fri: 8:00 AM - 6:00 PM
                   </p>
                 </div>
-              </div>
-
-              {/* Social Media */}
-              <div className="flex space-x-4 mt-8">
-                {[
-                  { icon: Facebook, href: "#" },
-                  { icon: Twitter, href: "#" },
-                  { icon: Linkedin, href: "#" },
-                  { icon: Instagram, href: "#" }
-                ].map(({ icon: Icon, href }, index) => (
-                  <a
-                    key={index}
-                    href={href}
-                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    style={{ 
-                      backgroundColor: 'rgba(198, 162, 79, 0.1)',
-                      border: '1px solid rgba(198, 162, 79, 0.3)'
-                    }}
-                  >
-                    <Icon 
-                      className="w-5 h-5" 
-                      style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
-                    />
-                  </a>
-                ))}
               </div>
             </div>
 
