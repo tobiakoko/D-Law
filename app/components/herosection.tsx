@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { Award, Phone, Clock, ArrowRight, Scale, TrendingUp, Globe } from 'lucide-react';
 import Stats from '~/components/Stats';
+import { Link } from 'react-router';
 
 export default function HeroSection() {
     const [scrollY, setScrollY] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mounted, setMounted] = useState(false);
     const heroRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
+        setMounted(true); // Fix hydration mismatch
+        
         const handleScroll = () => setScrollY(window.scrollY);
         const handleMouseMove = (e: MouseEvent) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
@@ -23,12 +27,60 @@ export default function HeroSection() {
     }, []);
 
     const stats = [
-    { number: "15+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
-    { number: "1000+", label: "Cases Won", icon: <Award className="w-6 h-6" /> },
-    { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
-    { number: "$50M+", label: "Recovered", icon: <Globe className="w-6 h-6" /> }
-  ];
+        { number: "15+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
+        { number: "1000+", label: "Cases Won", icon: <Award className="w-6 h-6" /> },
+        { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
+        { number: "$50M+", label: "Recovered", icon: <Globe className="w-6 h-6" /> }
+    ];
 
+    if (!mounted) {
+        return (
+            <div 
+                className="relative min-h-screen flex items-center justify-center pt-20"
+                style={{ backgroundColor: 'var(--color-body-bg)' }}
+            >
+                <div className="relative z-10 container mt-5">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8">
+                            <div className="space-y-6">
+                                <h1 
+                                    className="leading-tight"
+                                    style={{
+                                        fontFamily: 'var(--font-raleway)',
+                                        fontSize: 'var(--text-heading-1)',
+                                        lineHeight: 'var(--text-heading-1--line-height)',
+                                        fontWeight: 'var(--font-weight-bold)',
+                                        color: 'var(--color-heading)'
+                                    }}
+                                >
+                                    <span>Expert Legal</span>
+                                    <br />
+                                    <span style={{ color: 'var(--color-primary)' }}>
+                                        Counsel
+                                    </span>
+                                </h1>
+                                
+                                <p 
+                                    className="leading-relaxed max-w-lg"
+                                    style={{
+                                        fontFamily: 'var(--font-raleway)',
+                                        fontSize: 'var(--text-body-large)',
+                                        lineHeight: 'var(--text-body-large--line-height)',
+                                        color: 'var(--color-secondary)',
+                                        fontWeight: 'var(--font-weight-normal)'
+                                    }}
+                                >
+                                    With over 15 years of dedicated legal experience, we provide exceptional 
+                                    representation across corporate law, criminal defense, and civil litigation. 
+                                    Your rights are our priority.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
     return (
         <div 
             ref={heroRef} 
@@ -117,7 +169,7 @@ export default function HeroSection() {
                                 }}
                             >
                                 <Phone className="mr-2 w-5 h-5" />
-                                Call: (555) 123-4567
+                                Call: (813) 385-8612
                             </button>
                         </div>
 
@@ -279,18 +331,12 @@ export default function HeroSection() {
             </div>
 
             {/* Scroll Indicator */}
-            <div 
+            <Link
+                to={{
+                    hash: "#practice-areas",
+                }} 
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200"
-                onClick={() => {
-                    const nextSection = document.querySelector('section:nth-of-type(2)');
-                    if (nextSection) {
-                        nextSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start' 
-                        });
-                    }
-                }}
-                >
+            >
                 <div
                     className="w-6 h-10 border-2 rounded-full flex justify-center"
                     style={{ borderColor: 'var(--color-primary)' }}
@@ -300,7 +346,7 @@ export default function HeroSection() {
                         style={{ backgroundColor: 'var(--color-primary)' }}
                     />
                 </div>
-            </div>
+            </Link>
         </div>
     );
 }

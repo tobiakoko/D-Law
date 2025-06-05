@@ -35,14 +35,6 @@ const faqItems = [
     answer: "Yes, we offer remote consultations via video conference for clients who prefer or require this option. Please contact us to arrange a virtual meeting."
   },
 ];
-{/*
-  IMMIGRATION
-  PERSONAL INJURY
-  INTERNATIONAL BUSINESS
-  FAMILY LAW
-  CONTRACT DISPUTES
-  CRIMINAL LAW
-  */}
 
 const practiceAreas = [
   {
