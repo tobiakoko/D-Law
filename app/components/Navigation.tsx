@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import DarkLogo from '~/assets/logo-light.png';
 import { Link, NavLink } from 'react-router';
 import { AltLogo } from '~/components/logo';
 
@@ -16,7 +15,7 @@ export default function Navigation() {
 
   const navigationItems = [
     { label: 'Home', href: '/' },
-    { label: 'About Us', href: '#about' },
+    { label: 'About', href: '#about' },
     { label: 'Practice Areas', href: '#practice-areas' },
     { label: 'Contact', href: '#contact' }
   ];
@@ -61,27 +60,29 @@ export default function Navigation() {
                     ></span>
                   </NavLink>
                 ))}
-                <button 
-                  className="px-6 py-3 rounded-full font-medium transform hover:scale-105 transition-all duration-300 shadow-lg"
-                  style={{
-                    backgroundColor: 'var(--color-primary)',
-                    color: 'var(--color-form-placeholder)',
-                    fontFamily: 'var(--font-raleway)',
-                    fontSize: 'var(--text-body-small)',
-                    fontWeight: 'var(--font-weight-medium)',
-                    borderRadius: 'var(--radius)'
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = 'var(--color-form-bg-focus)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = 'var(--color-primary)';
-                  }}
-                >
-                  Consultation
-                </button>
+                <Link to="#faq">
+                  <button 
+                    className="px-6 py-3 rounded-full font-medium transform hover:scale-105 transition-all duration-300 shadow-lg"
+                    style={{
+                      backgroundColor: 'var(--color-primary)',
+                      color: 'var(--color-form-placeholder)',
+                      fontFamily: 'var(--font-raleway)',
+                      fontSize: 'var(--text-body-small)',
+                      fontWeight: 'var(--font-weight-medium)',
+                      borderRadius: 'var(--radius)'
+                    }}
+                    onMouseEnter={(e) => {
+                      const target = e.target as HTMLButtonElement;
+                      target.style.backgroundColor = 'var(--color-form-bg-focus)';
+                    }}
+                    onMouseLeave={(e) => {
+                      const target = e.target as HTMLButtonElement;
+                      target.style.backgroundColor = 'var(--color-primary)';
+                    }}
+                  >
+                    Consultation
+                  </button>
+                </Link>
               </div>
 
               {/* Mobile menu button */}

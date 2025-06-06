@@ -207,7 +207,7 @@ const Footer = ({
                     style={{ color: 'var(--color-brand-gold, #C6A24F)' }}
                   />
                   <p style={{ color: '#E5E7EB' }}>
-                    Mon - Fri: 8:00 AM - 6:00 PM
+                    Mon - Sat: 8:00 AM - 8:00 PM
                   </p>
                 </div>
               </div>

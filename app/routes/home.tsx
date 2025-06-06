@@ -3,16 +3,43 @@ import Testimonials from "~/components/Testimonials";
 import HeroSection from "~/components/herosection";
 import FAQSection from "~/components/faq";
 import PracticeAreas from "~/components/PracticeArea";
+import { AboutSection } from "~/components/about";
 
 import { Scale, Shield, Award, Users, Gavel, TrendingUp, Clock, Globe } from 'lucide-react';
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Osei K. Prempeh - Attorney, Mediator and Counselot at law" },
-    { name: "description", content: "Call (813) 879-5919 for a free case consultation with The Law Offices of Osei K. Prempeh, P.A. today to get justice and compensation you deserve." },
-    {}
+    { name: "description", content: "Call (813) 879-5919 for a case consultation with The Law Offices of Osei K. Prempeh, P.A. today to get justice and compensation you deserve." },
+    
+    // Open Graph Tags
+    { property: "og:title", content: "Osei K. Prempeh | Attorney, Mediator and Counselor at law" },
+    {
+      property: "og:description",
+      content: "Dedicated legal representation with integrity and expertise. Call (813) 879-5919 for a case consultation with The Law Offices of Osei K. Prempeh, P.A. today to get justice and compensation you deserve."
+    },
+    {
+      property: "og:image",
+      content: "https://opengraph.b-cdn.net/production/images/646ae1b5-5d60-4a4c-9e16-9526f1ca8e2a.png?token=0AR2opKrjU4NnLS589B9lQEz4y_xrPqvyVq5EJvwsn8&height=500&width=500&expires=33285185786"
+    },
+    { property: "og:image:alt", content: "Osei K. Prempeh Law Firm Logo" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "John Doe Law Firm" },
+    { property: "og:url", content: "https://www.oseiprempeh.com/" },
+    { property: "og:type", content: "website" },
+
+    // Twitter Card Tags (Optional, but good for social sharing)
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:creator", content: "@ArkoTobi" },
+    { name: "twitter:title", content: "Osei K. Prempeh | Attorney, Mediator and Counselor at law" },
+    { name: "twitter:description", content: "Dedicated legal representation with integrity and expertise. Call (813) 879-5919 for a case consultation with The Law Offices of Osei K. Prempeh, P.A. today to get justice and compensation you deserve." },
+    { 
+      name: "twitter:image", 
+      content: "https://opengraph.b-cdn.net/production/images/646ae1b5-5d60-4a4c-9e16-9526f1ca8e2a.png?token=0AR2opKrjU4NnLS589B9lQEz4y_xrPqvyVq5EJvwsn8&height=500&width=500&expires=33285185786"
+    },
   ];
 }
+
 const faqItems = [
   {
     question: "What legal areas do you specialize in?",
@@ -42,64 +69,65 @@ const practiceAreas = [
     title: "Immigration Law",
     description: "Navigate complex immigration processes with confidence. From visa applications to citizenship, we provide expert guidance for individuals and families seeking to build their American dream.",
     cases: "800+",
-    gradient: "from-blue-600 to-indigo-600"
   },
   {
     icon: <Shield className="w-8 h-8" />,
     title: "Personal Injury",
-    description: "When life takes an unexpected turn, we fight for the compensation you deserve. Our proven track record includes securing millions in settlements for accident victims and their families.",
+    description: "When life takes an unexpected turn, we fight for the compensation you deserve. Our proven track record includes securing thousands in settlements for accident victims and their families.",
     cases: "450+",
-    gradient: "from-red-600 to-orange-600"
   },
   {
     icon: <Scale className="w-8 h-8" />,
     title: "International Business",
     description: "Expand your business globally with strategic legal support. We specialize in cross-border transactions, international contracts, and regulatory compliance across multiple jurisdictions.",
     cases: "300+",
-    gradient: "from-purple-600 to-blue-600"
   },
   {
     icon: <Users className="w-8 h-8" />,
     title: "Family Law",
     description: "Protecting what matters most during life's transitions. Our compassionate approach ensures your family's interests are safeguarded through divorce, custody, and adoption proceedings.",
     cases: "600+",
-    gradient: "from-green-600 to-teal-600"
   },
   {
     icon: <Gavel className="w-8 h-8" />,
     title: "Contract Disputes",
     description: "When business relationships break down, we step in. Our litigation experts resolve complex commercial disputes efficiently, protecting your business interests and bottom line.",
     cases: "350+",
-    gradient: "from-orange-600 to-yellow-600"
   },
   {
     icon: <Shield className="w-8 h-8" />,
     title: "Criminal Defense",
     description: "Your freedom and future are our priority. With aggressive advocacy and meticulous preparation, we defend your rights against all criminal charges with a proven success record.",
     cases: "500+",
-    gradient: "from-gray-600 to-slate-600"
   }
 ];
 
   const testimonials = [
     {
-      name: "Sarah Mitchell",
+      name: "Christabel A",
       role: "CEO, TechStart Inc.",
-      content: "John's expertise in corporate law saved our startup millions. His strategic thinking is unmatched.",
+      content: "He is very professional and knowledgeable along with his staff. During my very stressful immigration issues with school and work, he provided professional assistance.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face"
     },
     {
-      name: "Michael Chen",
+      name: "Georgetta B",
       role: "Small Business Owner",
-      content: "Professional, responsive, and incredibly knowledgeable. John delivered results beyond expectations.",
+      content: "Did a wonderful job for both me and my son",
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face"
     },
     {
-      name: "Emily Rodriguez",
+      name: "Tmk W",
       role: "Former Client",
-      content: "During my family's difficult time, John provided both legal excellence and genuine compassion.",
+      content: "I highly recommend his services.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face"
+    },
+    {
+      name: "Kym H",
+      role: "Former Client",
+      content: "Great Lawyer..",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face"
     }
@@ -116,6 +144,7 @@ export default function Home() {
   return (
       <main className="min-h-screen overflow-x-hidden bg-body-bg font-raleway">
         <HeroSection />
+        <AboutSection />
         <PracticeAreas practiceAreas={practiceAreas} />
         <Testimonials testimonials={testimonials} />
         <FAQSection faqItems={faqItems} />

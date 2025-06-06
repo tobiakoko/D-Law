@@ -70,7 +70,7 @@ export default function HeroSection() {
                                         fontWeight: 'var(--font-weight-normal)'
                                     }}
                                 >
-                                    With over 15 years of dedicated legal experience, we provide exceptional 
+                                    With over 20 years of dedicated legal experience, we provide exceptional 
                                     representation across corporate law, criminal defense, and civil litigation. 
                                     Your rights are our priority.
                                 </p>

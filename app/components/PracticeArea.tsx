@@ -5,7 +5,6 @@ type PracticeAreas = {
   title: string;
   description: string;
   cases: string;
-  gradient: string;
 };
 
 export default function PracticeAreas({ practiceAreas }: { practiceAreas: PracticeAreas[] }) {
