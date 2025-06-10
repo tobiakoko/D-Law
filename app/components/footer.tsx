@@ -43,19 +43,19 @@ const Footer = ({
     {
       title: "Practice Areas",
       links: [
-        { text: "Immigration", url: "#" },
-        { text: "Personal Injury", url: "#" },
-        { text: "International Business", url: "#" },
-        { text: "Family Law", url: "#" },
-        { text: "Contract Disputes", url: "#" },
-        { text: "Criminal Law", url: "#" },
+        { text: "Immigration", url: "#practice-areas" },
+        { text: "Personal Injury", url: "#practice-areas" },
+        { text: "International Business", url: "#practice-areas" },
+        { text: "Family Law", url: "#practice-areas" },
+        { text: "Contract Disputes", url: "#practice-areas" },
+        { text: "Criminal Law", url: "#practice-areas" },
       ],
     },
     {
       title: "Firm",
       links: [
         { text: "About", url: "#about" },
-        { text: "Practice Areas", url: "#" },
+        { text: "Practice Areas", url: "#practice-areas" },
         { text: "Client Testimonials", url: "#testimonials" },
         { text: "Contact", url: "#contact" },
       ],
@@ -66,7 +66,6 @@ const Footer = ({
         { text: "Legal Resources", url: "#" },
         { text: "FAQ", url: "#faq" },
         { text: "Consultation", url: "#contact" },
-        { text: "Case Evaluation", url: "#" },
       ],
     },
   ],
@@ -272,7 +271,7 @@ const Footer = ({
               {bottomLinks.map((link, linkIdx) => (
                 <NavLink
                   key={linkIdx}
-                  to={link.url}
+                  to={{ hash:link.url }}
                   className="text-sm transition-colors duration-300"
                   style={{ 
                     color: '#9CA3AF'

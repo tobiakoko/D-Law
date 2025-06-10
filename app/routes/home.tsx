@@ -105,14 +105,14 @@ const practiceAreas = [
   const testimonials = [
     {
       name: "Christabel A",
-      role: "CEO, TechStart Inc.",
+      role: "Former Client",
       content: "He is very professional and knowledgeable along with his staff. During my very stressful immigration issues with school and work, he provided professional assistance.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face"
     },
     {
       name: "Georgetta B",
-      role: "Small Business Owner",
+      role: "Former Client",
       content: "Did a wonderful job for both me and my son",
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face"

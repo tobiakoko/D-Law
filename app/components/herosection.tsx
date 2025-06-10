@@ -27,11 +27,14 @@ export default function HeroSection() {
     }, []);
 
     const stats = [
-        { number: "15+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
+        { number: "20+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
         { number: "1000+", label: "Cases Won", icon: <Award className="w-6 h-6" /> },
+        { number: "6", label: "Practice Areas", icon: <TrendingUp className="w-6 h-6" /> }
+    ];
+    {/* 
         { number: "98%", label: "Success Rate", icon: <TrendingUp className="w-6 h-6" /> },
         { number: "$50M+", label: "Recovered", icon: <Globe className="w-6 h-6" /> }
-    ];
+        */}
 
     if (!mounted) {
         return (
@@ -70,9 +73,11 @@ export default function HeroSection() {
                                         fontWeight: 'var(--font-weight-normal)'
                                     }}
                                 >
-                                    With over 20 years of dedicated legal experience, we provide exceptional 
-                                    representation across corporate law, criminal defense, and civil litigation. 
-                                    Your rights are our priority.
+                                    The Law Offices of Osei K. Prempeh, P.A., offers experienced 
+                                    and dedicated legal representation across a diverse range of 
+                                    practice areas. With over two decades of experience, Attorney Osei K. 
+                                    Prempeh is committed to providing comprehensive legal services as an 
+                                    attorney, mediator, and counselor at law.
                                 </p>
                             </div>
                         </div>
@@ -119,58 +124,64 @@ export default function HeroSection() {
                                     fontWeight: 'var(--font-weight-normal)'
                                 }}
                             >
-                                With over 15 years of dedicated legal experience, we provide exceptional 
-                                representation across corporate law, criminal defense, and civil litigation. 
-                                Your rights are our priority.
+                                The Law Offices of Osei K. Prempeh, P.A., offers experienced 
+                                and dedicated legal representation across a diverse range of 
+                                practice areas. With over two decades of experience, Attorney Osei K. 
+                                Prempeh is committed to providing comprehensive legal services as an 
+                                attorney, mediator, and counselor at law.
                             </p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button 
-                                className="group px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center"
-                                style={{
-                                    backgroundColor: 'var(--color-primary)',
-                                    color: 'var(--color-form-placeholder)',
-                                    fontFamily: 'var(--font-raleway)',
-                                    fontWeight: 'var(--font-weight-semibold)',
-                                    borderRadius: 'var(--radius)'
-                                }}
-                                onMouseEnter={(e) => {
-                                    const target = e.target as HTMLButtonElement;
-                                    target.style.backgroundColor = 'var(--color-form-bg-focus)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    const target = e.target as HTMLButtonElement;
-                                    target.style.backgroundColor = 'var(--color-primary)';
-                                }}
-                            >
-                                Get Consultation
-                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            <Link to={{ hash:"#about" }}>
+                                <button 
+                                    className="group px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center"
+                                    style={{
+                                        backgroundColor: 'var(--color-primary)',
+                                        color: 'var(--color-form-placeholder)',
+                                        fontFamily: 'var(--font-raleway)',
+                                        fontWeight: 'var(--font-weight-semibold)',
+                                        borderRadius: 'var(--radius)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        const target = e.target as HTMLButtonElement;
+                                        target.style.backgroundColor = 'var(--color-form-bg-focus)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const target = e.target as HTMLButtonElement;
+                                        target.style.backgroundColor = 'var(--color-primary)';
+                                    }}
+                                >
+                                    Learn More
+                                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </Link>
                             
-                            <button 
-                                className="px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center border-2"
-                                style={{
-                                    borderColor: 'var(--color-primary)',
-                                    color: 'var(--color-primary)',
-                                    fontFamily: 'var(--font-raleway)',
-                                    fontWeight: 'var(--font-weight-semibold)',
-                                    borderRadius: 'var(--radius)'
-                                }}
-                                onMouseEnter={(e) => {
-                                    const target = e.target as HTMLButtonElement;
-                                    target.style.backgroundColor = 'var(--color-primary)';
-                                    target.style.color = 'var(--color-form-placeholder)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    const target = e.target as HTMLButtonElement;
-                                    target.style.backgroundColor = 'transparent';
-                                    target.style.color = 'var(--color-primary)';
-                                }}
-                            >
-                                <Phone className="mr-2 w-5 h-5" />
-                                Call: (813) 385-8612
-                            </button>
+                            <Link to={{ hash:"#contact"}}>
+                                <button 
+                                    className="px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center border-2"
+                                    style={{
+                                        borderColor: 'var(--color-primary)',
+                                        color: 'var(--color-primary)',
+                                        fontFamily: 'var(--font-raleway)',
+                                        fontWeight: 'var(--font-weight-semibold)',
+                                        borderRadius: 'var(--radius)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        const target = e.target as HTMLButtonElement;
+                                        target.style.backgroundColor = 'var(--color-primary)';
+                                        target.style.color = 'var(--color-form-placeholder)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const target = e.target as HTMLButtonElement;
+                                        target.style.backgroundColor = 'transparent';
+                                        target.style.color = 'var(--color-primary)';
+                                    }}
+                                >
+                                    <Phone className="mr-2 w-5 h-5" />
+                                    Contact Us
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Stats Component */}
@@ -272,7 +283,7 @@ export default function HeroSection() {
                                                     fontFamily: 'var(--font-raleway)'
                                                 }}
                                             >
-                                                Success Rate
+                                                Practice Areas
                                             </div>
                                             <div 
                                                 className="text-lg font-bold"
@@ -282,7 +293,7 @@ export default function HeroSection() {
                                                     fontWeight: 'var(--font-weight-bold)'
                                                 }}
                                             >
-                                                98%
+                                                6
                                             </div>
                                         </div>
                                     </div>
@@ -309,7 +320,7 @@ export default function HeroSection() {
                                                     fontFamily: 'var(--font-raleway)'
                                                 }}
                                             >
-                                                Cases Won
+                                                Years of Experience
                                             </div>
                                             <div 
                                                 className="text-lg font-bold"
@@ -319,7 +330,7 @@ export default function HeroSection() {
                                                     fontWeight: 'var(--font-weight-bold)'
                                                 }}
                                             >
-                                                500+
+                                                20+
                                             </div>
                                         </div>
                                     </div>
@@ -333,7 +344,7 @@ export default function HeroSection() {
             {/* Scroll Indicator */}
             <Link
                 to={{
-                    hash: "#practice-areas",
+                    hash: "#about",
                 }} 
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200"
             >
