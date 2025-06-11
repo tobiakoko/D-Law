@@ -24,7 +24,7 @@ export function meta({}: Route.MetaArgs) {
     },
     { property: "og:image:alt", content: "Osei K. Prempeh Law Firm Logo" },
     { property: "og:type", content: "website" },
-    { property: "og:site_name", content: "John Doe Law Firm" },
+    { property: "og:site_name", content: "Osei K. Prempeh Law Firm" },
     { property: "og:url", content: "https://www.oseiprempeh.com/" },
     { property: "og:type", content: "website" },
 
