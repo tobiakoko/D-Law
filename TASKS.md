@@ -68,10 +68,10 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T7 — Shared accessible Modal + a11y 🔒
-- [ ] Build `app/components/Modal.tsx`: `role="dialog"` + `aria-modal` + `aria-labelledby`, Escape-to-close, focus trap, focus restore on close, body-scroll-lock, render-when-open.
-- [ ] Use it for ConsultationModal, PracticeAreaModal, and the Navbar mobile drawer.
-- [ ] Add `role="tablist"`/`role="tab"`/`aria-selected` + arrow keys to AboutAttorney tabs; `aria-controls`/panel `id` + visible focus ring to FaqSection.
-- [ ] Global `prefers-reduced-motion` guard on transitions/animations; verify accent-gold contrast ≥ 4.5:1 for any small body text.
+- [x] Build `app/components/Modal.tsx`: `role="dialog"` + `aria-modal` + `aria-labelledby`, Escape-to-close, focus trap, focus restore on close, body-scroll-lock, render-when-open.
+- [x] Use it for ConsultationModal, PracticeAreaModal, and the Navbar mobile drawer.
+- [x] Add `role="tablist"`/`role="tab"`/`aria-selected` + arrow keys to AboutAttorney tabs; `aria-controls`/panel `id` + visible focus ring to FaqSection.
+- [x] Global `prefers-reduced-motion` guard on transitions/animations; verify accent-gold contrast ≥ 4.5:1 for any small body text.
 - ✅ Keyboard-only user can open/close every modal and the mobile menu, never loses focus, and background doesn't scroll.
 
 ---
