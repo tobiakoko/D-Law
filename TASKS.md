@@ -17,8 +17,8 @@
 ---
 
 ## T1 — Config: static + pre-rendered
-- [ ] Set `react-router.config.ts` → `{ ssr: false, prerender: ["/"] }`.
-- [ ] Confirm `tsconfig` keeps `~/*` → `app/*` (it does). Do not add the redesign's `@/*`.
+- [x] Set `react-router.config.ts` → `{ ssr: false, prerender: ["/"] }`.
+- [x] Confirm `tsconfig` keeps `~/*` → `app/*` (it does). Do not add the redesign's `@/*`.
 - ✅ `npm run build` prints a prerender/SPA line and emits `build/client/index.html`.
 
 ---
