@@ -7,11 +7,11 @@
 ---
 
 ## T0 — Clean the base & baseline the build
-- [ ] Delete `app/welcome/` (dead 3,948-line Kallyas scrape + stock RR splash).
-- [ ] Delete `app/components/content.tsx` (dead; breaks typecheck via missing `~/components/ui/*`).
-- [ ] `npm audit fix` (patch the undici criticals from `@react-router/node`).
-- [ ] Add `.nvmrc` (`20`).
-- [ ] Remove the server `Dockerfile`/`.dockerignore` (or replace with a static nginx/caddy image). The old one contradicts `ssr:false`.
+- [x] Delete `app/welcome/` (dead 3,948-line Kallyas scrape + stock RR splash).
+- [x] Delete `app/components/content.tsx` (dead; breaks typecheck via missing `~/components/ui/*`).
+- [x] `npm audit fix` (patch the undici criticals from `@react-router/node`).
+- [x] Add `.nvmrc` (`20`).
+- [x] Remove the server `Dockerfile`/`.dockerignore` (or replace with a static nginx/caddy image). The old one contradicts `ssr:false`.
 - ✅ `npm run typecheck` is **green**; `npm audit --omit=dev` is clean; `npm run build` succeeds.
 
 ---
