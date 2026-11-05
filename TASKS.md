@@ -34,9 +34,9 @@
 ---
 
 ## T3 — Theme: keep engine, freeze one theme, drop switcher 🔒
-- [ ] Copy `src/context/ThemeContext.tsx` → `app/context/ThemeContext.tsx`.
-- [ ] Default + freeze to `heritage-navy`. Keep `ThemeProvider`/`useTheme` so the 12 consumers keep working.
-- [ ] Do **not** port `ThemeSelectorBar.tsx`; do not render it.
+- [x] Copy `src/context/ThemeContext.tsx` → `app/context/ThemeContext.tsx`.
+- [x] Default + freeze to `heritage-navy`. Keep `ThemeProvider`/`useTheme` so the 12 consumers keep working.
+- [x] Do **not** port `ThemeSelectorBar.tsx`; do not render it.
 - ✅ Site renders in the navy/gold theme; no public theme UI; `useTheme()` resolves everywhere.
 
 ---
