@@ -1,439 +1,128 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
 
+/*
+ * Self-hosted fonts (Latin subset, variable weight, OFL-1.1 — licenses in
+ * app/assets/fonts). No Google Fonts CDN. Plus Jakarta Sans (body) is
+ * preloaded in root.tsx.
+ */
 @font-face {
-  font-family: 'Raleway Variable';
-  src: url('./assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900; 
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
+  font-weight: 200 800;
   font-display: swap;
-  font-named-instance: 'Regular';
+  src: url('./assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Raleway Variable';
-  src: url('./assets/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900; 
-  font-style: italic;
-  font-display: swap;
-  font-named-instance: 'Italic';
-}
-
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'Playfair Display';
   font-style: normal;
+  font-weight: 400 900;
   font-display: swap;
+  src: url('./assets/fonts/playfair-display-latin-wght-normal.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('./assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
-  font-weight: 600;
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('./assets/fonts/playfair-display-latin-wght-italic.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cinzel';
   font-style: normal;
+  font-weight: 400 900;
   font-display: swap;
+  src: url('./assets/fonts/cinzel-latin-wght-normal.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@font-face {
-  font-family: 'Raleway';
-  src: url('./assets/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./assets/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@layer components {
-  .typography {
-    h1 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-1);
-      line-height: var(--text-heading-1--line-height);
-      color: var(--color-heading);
-    }
-    
-    h2 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-2);
-      line-height: var(--text-heading-2--line-height);
-      color: var(--color-heading);
-    }
-    
-    h3 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-3);
-      line-height: var(--text-heading-3--line-height);
-      color: var(--color-heading);
-    }
-    
-    h4 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-4);
-      line-height: var(--text-heading-4--line-height);
-      color: var(--color-heading);
-    }
-    
-    h5 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-5);
-      line-height: var(--text-heading-5--line-height);
-      color: var(--color-heading);
-    }
-    
-    h6 {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--text-heading-6);
-      line-height: var(--text-heading-6--line-height);
-      color: var(--color-heading);
-    }
-    
-    p {
-      font-family: var(--font-family-raleway);
-      font-weight: var(--font-weight-normal);
-      font-size: var(--text-body-regular);
-      line-height: var(--text-body-regular--line-height);
-      color: var(--color-body-text);
-    }
-  }
-  
-  .heading-jumbo {
-    font-family: var(--font-family-raleway);
-    font-size: var(--text-heading-jumbo);
-    line-height: var(--text-heading-jumbo--line-height);
-    color: var(--color-heading);
-  }
-  
-  .subheader {
-    font-family: var(--font-family-raleway);
-    font-size: var(--text-subheader);
-    line-height: var(--text-subheader--line-height);
-    letter-spacing: var(--text-subheader--letter-spacing);
-    color: var(--color-heading);
-  }
-  
-  .text-xxlarge {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-xxlarge);
-    line-height: var(--text-body-xxlarge--line-height);
-    color: var(--color-body-text);
-  }
-  
-  .text-xlarge {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-xlarge);
-    line-height: var(--text-body-xlarge--line-height);
-    color: var(--color-body-text);
-  }
-  
-  .text-large {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-large);
-    line-height: var(--text-body-large--line-height);
-    color: var(--color-body-text);
-  }
-  
-  .text-medium {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-medium);
-    line-height: var(--text-body-medium--line-height);
-    color: var(--color-body-text);
-  }
-  
-  .text-small {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-small);
-    line-height: var(--text-body-small--line-height);
-    color: var(--color-body-text);
-  }
-  
-  .text-tiny {
-    font-family: var(--font-family-raleway);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--text-body-tiny);
-    line-height: var(--text-body-tiny--line-height);
-    color: var(--color-body-text);
-  }
+/*
+ * Brand tokens. Values come from the active theme in ~/data/firm via CSS
+ * variables set on <html> (see themeCssVars in ~/context/ThemeContext).
+ * `inline` makes utilities reference the variable directly.
+ */
+@theme inline {
+  --color-brand: var(--theme-primary-bg);
+  --color-brand-surface: var(--theme-primary-surface);
+  --color-brand-badge: var(--theme-badge-bg);
+  --color-accent: var(--theme-accent);
+  --color-accent-hover: var(--theme-accent-hover);
+  --color-accent-ink: var(--theme-accent-ink);
+  --color-canvas: var(--theme-body-canvas);
+  /* Headings on light backgrounds use the brand navy. */
+  --color-ink: var(--theme-primary-bg);
 }
 
 @theme {
-  --font-raleway: 'Raleway Variable', 'Raleway', system-ui, sans-serif;
-  --font-raleway-fallback: 'Raleway', 'Helvetica Neue', 'Arial', sans-serif;
-  --color-primary: #ae844b;
-  --color-accent: #ae844b;
-  --color-secondary: #3e4c54;
-  --color-body-bg: #fbfcfc;
-  --color-body-text: #141719;
-  --color-heading: #141719;
-  --color-form-border: #e2e2e2;
-  --color-form-placeholder: #ffffff;
-  --color-form-bg: #be9c6b;
-  --color-form-bg-focus: #caaf88;
-  --letter-spacing-subheader: 0.9px;
-  --radius: 0.625rem;
-}
+  /* Warm neutrals used by the FAQ / modal surfaces (theme-independent). */
+  --color-cream-50: #fdfcf7;
+  --color-cream-100: #f4f2ec;
+  --color-cream-200: #e5e0d8;
 
-@theme inline {
-  --color-background: var(--color-body-bg);
-  --color-foreground: var(--color-body-text);
-  --color-card: var(--color-form-bg);
-  --color-card-foreground: var(--color-form-border);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--color-primary);
-  --color-primary-foreground: var(--color-form-placeholder);
-  --color-secondary: var(--color-secondary);
-  --color-secondary-foreground: var(--color-form-placeholder);
-  --color-muted: var(--color-secondary);
-  --color-muted-foreground: var(--color-body-text);
-  --color-accent: var(--color-accent);
-  --color-accent-foreground: var(--color-form-placeholder);
-  --color-destructive: var(--color-red-400);
-  --color-border: var(--color-form-border);
-  --color-input: var(--color-form-placeholder);
-  --color-ring: var(--color-form-bg);
-}
+  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
 
-:root {
-  --font-raleway: 'Raleway Variable', 'Raleway', system-ui, sans-serif;
-  --color-primary: #ae844b;
-  --color-accent: #ae844b;
-  --color-secondary: #3e4c54;
-  --color-body-bg: #fbfcfc;
-  --color-body-text: #141719;
-  --color-heading: #141719;
-  --color-form-border: #e2e2e2;
-  --color-form-placeholder: #ffffff;
-  --color-form-bg: #be9c6b;
-  --color-form-bg-focus: #caaf88;
-  --color-brand-navy: #1A2A4F;
-  --color-brand-gold: #C6A24F;
-  --color-brand-gray: #6B7280;
+  --spacing-18: 4.5rem;
 
-  --letter-spacing-subheader: 0.9px;
+  --animate-fade-in: fade-in 150ms ease-out;
 
-
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-    
-    /* Font Sizes with Line Heights */
-  --text-heading-jumbo: 4.5rem;
-  --text-heading-jumbo--line-height: 4.5rem;
-    
-  --text-heading-1: 4.5rem;
-  --text-heading-1--line-height: 4.5rem;
-    
-  --text-heading-2: 3rem;
-  --text-heading-2--line-height: 3.5rem;
-    
-  --text-heading-3: 2rem;
-  --text-heading-3--line-height: 2.5rem;
-    
-  --text-heading-4: 1.5rem;
-  --text-heading-4--line-height: 2rem;
-    
-  --text-heading-5: 1.125rem;
-  --text-heading-5--line-height: 1.5rem;
-    
-  --text-heading-6: 0.875rem;
-  --text-heading-6--line-height: 1.5rem;
-    
-  --text-subheader: 1.125rem;
-  --text-subheader--line-height: 1.5rem;
-  --text-subheader--letter-spacing: 0.9px;
-    
-  --text-body-xxlarge: 2.5rem;
-  --text-body-xxlarge--line-height: 3rem;
-    
-  --text-body-xlarge: 2rem;
-  --text-body-xlarge--line-height: 2.5rem;
-    
-  --text-body-large: 1.5rem;
-  --text-body-large--line-height: 2rem;
-    
-  --text-body-medium: 1.25rem;
-  --text-body-medium--line-height: 1.5rem;
-    
-  --text-body-regular: 1rem;
-  --text-body-regular--line-height: 1.5rem;
-    
-  --text-body-small: 0.875rem;
-  --text-body-small--line-height: 1rem;
-    
-  --text-body-tiny: 0.75rem;
-  --text-body-tiny--line-height: 0.875rem;
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  ::selection {
-    @apply bg-form-bg-focus text-form-placeholder;
-  }
-  html {
-    font-family: var(--font-raleway);
-    @apply scroll-smooth;
-  }
-  
-  body {
-    font-synthesis-weight: none;
-    text-rendering: optimizeLegibility;
-    background-color: var(--color-body-bg);
-    color: var(--color-body-text);
-    font-family: var(--font-raleway);
-  }
-}
-
-@layer base {
-
-  @supports (font: var(--font-raleway)) and (-webkit-appearance: none) {
-    [data-wrapper] {
-      @apply min-[1800px]:border-t;
-    }
-  }
-
-  a:active,
-  button:active {
-    @apply opacity-60 md:opacity-100;
-  }
-}
-
-
-@layer utilities {
-  .border-grid {
-    @apply border-border/50;
-  }
-
-  .section-soft {
-    @apply from-background bg-gradient-to-b;
-  }
-
-  .theme-container {
-    @apply font-sans;
-  }
-
-  .container-wrapper {
-    @apply  mx-auto w-full px-2;
-  }
-
-  .container {
-    @apply mx-auto max-w-[1400px] px-4 lg:px-8;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .border-ghost {
-    @apply relative after:border-border after:absolute after:inset-0 after:border after:mix-blend-darken;
-  }
-
-  .step {
-    counter-increment: step;
-    @apply relative;
-  }
-
-  .step::before {
-    @apply text-muted-foreground right-0 mr-2 hidden size-7 items-center justify-center rounded-full text-center -indent-px font-mono text-sm font-medium md:absolute;
-    content: counter(step);
-  }
-
-  .extend-touch-target {
-    @media (pointer: coarse) {
-      @apply relative touch-manipulation after:absolute after:-inset-2;
-    }
-  }
-}
-
-@layer utilities {
   @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
+}
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes float-delayed {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1s ease-out;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-float-delayed {
-    animation: float-delayed 3s ease-in-out infinite 1.5s;
-  }
-
-  .scroll-smooth {
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky header. */
+    scroll-padding-top: 5rem;
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #1e293b;
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+}
+
+@utility font-brand {
+  font-family: var(--font-display);
+}
+
+/* Respect reduced-motion preferences for every transition/animation/scroll. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-    border-radius: 4px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #2563eb, #7c3aed);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

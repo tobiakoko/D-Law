@@ -4,3 +4,12 @@
 # React Router
 /.react-router/
 /build/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Test artifacts
+/playwright-report/
+/test-results/
