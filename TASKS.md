@@ -101,17 +101,17 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T11 — Tooling, tests, CI
-- [ ] ESLint (React Hooks + TS recommended) + Prettier; add `lint`/`format` scripts; fix flagged issues (index keys, hook deps, unused vars).
-- [ ] Vitest + RTL unit tests for the state machines: consultation wizard (step transitions + mailto fires), FAQ accordion (single-open), Navbar toggle (+Escape closes), PracticeAreas filter, AboutAttorney tabs.
-- [ ] One Playwright smoke test: load `/`, assert hero + a practice area + the phone text render, the "Schedule Consultation" CTA opens the modal, and Escape closes it.
-- [ ] GitHub Actions CI: `npm ci → typecheck → lint → test → build` (+ `npm audit --omit=dev`) on PR. Add Dependabot/Renovate.
-- ✅ CI is green on a PR; `main` can't regress silently.
+- [x] ESLint (React Hooks + TS recommended) + Prettier; add `lint`/`format` scripts; fix flagged issues (index keys, hook deps, unused vars).
+- [x] Vitest + RTL unit tests for the state machines: consultation wizard (step transitions + mailto fires), FAQ accordion (single-open), Navbar toggle (+Escape closes), PracticeAreas filter, AboutAttorney tabs.
+- [x] One Playwright smoke test: load `/`, assert hero + a practice area + the phone text render, the "Schedule Consultation" CTA opens the modal, and Escape closes it.
+- [x] GitHub Actions CI: `npm ci → typecheck → lint → test → build` (+ `npm audit --omit=dev`) on PR. Add Dependabot/Renovate.
+- ✅ CI is green on a PR; `main` can't regress silently. *(Every CI step passes locally; workflow not yet run on GitHub — first PR will confirm. Enable branch protection requiring the `verify` check.)*
 
 ---
 
 ## T12 — Docs & cleanup
-- [ ] Rewrite `README.md` for this project (what it is, run/build/deploy, how to update `firm.ts`, the one-theme-swap template reuse note, the hosted-form upgrade path).
-- [ ] Remove any leftover dead code, `console.log`, commented blocks.
+- [x] Rewrite `README.md` for this project (what it is, run/build/deploy, how to update `firm.ts`, the one-theme-swap template reuse note, the hosted-form upgrade path).
+- [x] Remove any leftover dead code, `console.log`, commented blocks.
 - ✅ A new dev can clone, read README, run, and deploy without guessing.
 
 ---
