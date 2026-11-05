@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from '~/data/firm';
+import { OG_IMAGE, firmJsonLd } from '~/data/structuredData';
 import { useSiteActions } from '~/routes/layout';
 import { AboutAttorney } from '~/sections/AboutAttorney';
 import { FaqSection } from '~/sections/FaqSection';
@@ -24,10 +25,18 @@ export function meta(_: Route.MetaArgs) {
     { property: 'og:url', content: `${CONTACT_INFO.siteUrl}/` },
     { property: 'og:title', content: TITLE },
     { property: 'og:description', content: DESCRIPTION },
+    { property: 'og:image', content: OG_IMAGE.url },
+    { property: 'og:image:width', content: String(OG_IMAGE.width) },
+    { property: 'og:image:height', content: String(OG_IMAGE.height) },
+    { property: 'og:image:alt', content: OG_IMAGE.alt },
 
-    { name: 'twitter:card', content: 'summary_large_image' },
+    // Square logo → "summary"; switch to summary_large_image with a 1200×630 image.
+    { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:title', content: TITLE },
     { name: 'twitter:description', content: DESCRIPTION },
+    { name: 'twitter:image', content: OG_IMAGE.url },
+
+    { 'script:ld+json': firmJsonLd() },
   ];
 }
 

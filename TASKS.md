@@ -86,8 +86,8 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T9 — SEO & structured data
-- [ ] Add JSON-LD `LegalService`/`Attorney` (name, address, phone, hours, areaServed) in `root.tsx` or `home.tsx`.
-- [ ] Confirm `meta()` title/description/OG are correct and the OG image is a **self-hosted** asset under `/public` (not an expiring CDN token URL).
+- [x] Add JSON-LD `LegalService`/`Attorney` (name, address, phone, hours, areaServed) in `root.tsx` or `home.tsx`.
+- [x] Confirm `meta()` title/description/OG are correct and the OG image is a **self-hosted** asset under `/public` (not an expiring CDN token URL).
 - ✅ Built `index.html` contains the JSON-LD and correct meta; `BUILD.md §5` greps pass.
 
 ---
