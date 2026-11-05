@@ -1,4 +1,4 @@
-import { createContext, useContext, type ReactNode } from 'react';
+import { createContext, useContext, type CSSProperties, type ReactNode } from 'react';
 import { ACTIVE_THEME_ID, THEME_CONFIGS } from '~/data/firm';
 import type { ThemeConfig, ThemePreset } from '~/types';
 
@@ -26,4 +26,21 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
 export function useTheme(): ThemeContextValue {
   return useContext(ThemeContext);
+}
+
+/**
+ * CSS custom properties for a theme. Set on <html> in root.tsx so they are in
+ * the prerendered HTML (no flash) and reach portaled modals. Tailwind tokens in
+ * app.css (`bg-brand`, `text-accent`, `text-accent-ink`, ...) read these.
+ */
+export function themeCssVars(theme: ThemeConfig): CSSProperties {
+  return {
+    '--theme-primary-bg': theme.primaryBg,
+    '--theme-primary-surface': theme.primarySurface,
+    '--theme-badge-bg': theme.badgeBg,
+    '--theme-accent': theme.accentColor,
+    '--theme-accent-hover': theme.accentHover,
+    '--theme-accent-ink': theme.accentInk,
+    '--theme-body-canvas': theme.bodyCanvas,
+  } as CSSProperties;
 }

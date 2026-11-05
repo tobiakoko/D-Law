@@ -70,6 +70,8 @@ export interface ThemeConfig {
   accentColor: string;
   accentHover: string;
   accentText: string;
+  /** Darker accent for small text on light backgrounds (WCAG AA ≥ 4.5:1 on white). */
+  accentInk: string;
   cardBg: string;
   cardBorder: string;
   heroGradient: string;
