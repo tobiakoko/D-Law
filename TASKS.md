@@ -77,10 +77,10 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T8 — Fonts: self-host, drop CDN 🔒
-- [ ] Decide type system (recommended: adopt the redesign's Cinzel/Playfair/Plus Jakarta Sans, self-hosted) — see INSTRUCTIONS §6.
-- [ ] Add `.woff2` (Latin-subset, only used weights) to `app/assets/fonts/`; `@font-face` in `app.css` with `font-display: swap`.
-- [ ] `preload` the primary body font in `root.tsx`; **remove** any Google Fonts `<link>`/`preconnect`.
-- [ ] Define `font-serif`/`font-sans`/`font-brand` so the ported classes resolve.
+- [x] Decide type system (recommended: adopt the redesign's Cinzel/Playfair/Plus Jakarta Sans, self-hosted) — see INSTRUCTIONS §6.
+- [x] Add `.woff2` (Latin-subset, only used weights) to `app/assets/fonts/`; `@font-face` in `app.css` with `font-display: swap`.
+- [x] `preload` the primary body font in `root.tsx`; **remove** any Google Fonts `<link>`/`preconnect`.
+- [x] Define `font-serif`/`font-sans`/`font-brand` so the ported classes resolve.
 - ✅ No network request to fonts.googleapis.com / gstatic.com; text renders with `swap`.
 
 ---

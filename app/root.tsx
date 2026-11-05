@@ -9,30 +9,17 @@ import {
 
 import type { Route } from "./+types/root";
 import { ThemeProvider, themeCssVars, useTheme } from "~/context/ThemeContext";
+import bodyFontUrl from "./assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2?url";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png"
-  }, 
-  { 
-    rel: "icon", 
-    type: "image/png", 
-    sizes: "32x32", 
-    href: "/favicon-32x32.png" 
-  },
-  { rel: "icon", 
-    type: "image/png", 
-    sizes: "16x16", 
-    href: "/favicon-16x16.png" 
-  },
-  { rel: "manifest", href: "/site.webmanifest" }
+  // Self-hosted body font; same hashed URL as the @font-face in app.css.
+  { rel: "preload", href: bodyFontUrl, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+  { rel: "icon", href: "/favicon.ico", sizes: "any" },
+  { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+  { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+  { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
