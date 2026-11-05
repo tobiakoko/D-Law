@@ -51,8 +51,8 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T5 — Compose into RR7 routing
-- [ ] `routes/layout.tsx`: `<Navbar/>` + `<Outlet/>` + `<Footer/>` + `<MobileBottomBar/>` + modal host (lift modal open-state here or into a small context).
-- [ ] `routes/home.tsx`: compose the `<main>` sections in the redesign's order; export `meta()` with correct title/description/OG (fix "Counselot" → "Counselor").
+- [x] `routes/layout.tsx`: `<Navbar/>` + `<Outlet/>` + `<Footer/>` + `<MobileBottomBar/>` + modal host (lift modal open-state here or into a small context).
+- [x] `routes/home.tsx`: compose the `<main>` sections in the redesign's order; export `meta()` with correct title/description/OG (fix "Counselot" → "Counselor").
 - ✅ `/` renders the full redesigned page; one modal host drives ConsultationModal + PracticeAreaModal.
 
 ---
