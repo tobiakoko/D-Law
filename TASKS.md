@@ -93,9 +93,9 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T10 — Content & compliance ⚠️ (launch blocker)
-- [ ] ⚠️ Attorney confirms every dollar figure, case count, and outcome in `CASE_RESULTS`/`VerdictsTicker`/`Testimonials` — or replace/remove.
-- [ ] Add Florida Bar results disclaimer ("Prior results do not guarantee a similar outcome") near verdicts/testimonials.
-- [ ] Confirm testimonials are real/consented (text-only unless real client photos with consent).
+- [ ] ⚠️ Attorney confirms every dollar figure, case count, and outcome in `CASE_RESULTS`/`VerdictsTicker`/`Testimonials` — or replace/remove. *(All tagged `TODO(attorney)` in `app/data/firm.ts`.)*
+- [x] Add Florida Bar results disclaimer ("Prior results do not guarantee a similar outcome") near verdicts/testimonials. *(VerdictsTicker footnote, Testimonials note, footer advertising notice — text in `LEGAL_NOTICES`.)*
+- [ ] ⚠️ Confirm testimonials are real/consented (text-only unless real client photos with consent). *(Code: text-only; redesign's invented quotes replaced with the previous site's reviews verbatim — consent still needed.)*
 - ✅ No unverified figures ship; disclaimer present.
 
 ---
@@ -117,14 +117,16 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## Client inputs needed (⚠️ blockers for launch, collected here)
-Fill these before go-live; track each as a `TODO(attorney)` in code:
-1. **Real office / cell / fax phone numbers** (only `(813) 879-5919` is known from old metadata — confirm which line it is and the others).
-2. **Verification of every case result / dollar figure / case count / success claim** (bar-advertising compliance).
-3. **Correct email** (`info@oseiprempeh.com` assumed — confirm).
-4. **Which theme** is final (default `heritage-navy` unless the firm prefers another preset).
-5. **Testimonial consent** / whether real client photos may be used.
-6. **OG/share image** (self-hosted) to replace any expiring CDN URL.
-
----
+Fill these before go-live; each is a `TODO(attorney)` in code (`grep -rn "TODO(attorney)" app`):
+1. **Phone numbers** — confirm `(813) 879-5919` is the main office line (now live in `CONTACT_INFO.phone`); provide real **cell** and **fax** (currently `null` → hidden). `app/data/firm.ts` `CONTACT_INFO`.
+2. **Case results** — verify every result in `CASE_RESULTS` (`$750,000`, `$1,800,000`, dismissals, asylum, EOIR, mediation) against real closed matters, or replace/remove. These came from the AI-generated redesign.
+3. **Counts & stats** — verify `casesCount` / `clientOutcomes` per practice area, "1,000+ matters resolved" (`FIRM_STATS`, `HERO_HIGHLIGHTS`) and "Over 1,000 clients served" (`TESTIMONIAL_HIGHLIGHTS`).
+4. **Court admissions** — confirm federal district court admission(s) before re-adding that claim (removed from hero/credentials for now).
+5. **Fee arrangements** — confirm contingency terms, flat fees, payment plans and free evaluations in `FEE_PLANS` / FAQ match firm practice.
+6. **Email** — confirm `info@oseiprempeh.com` receives consultation requests (the form's `mailto:` target).
+7. **Office hours** — confirm `Mon - Sat: 8:00 AM - 8:00 PM` (also in JSON-LD `openingHours`).
+8. **Testimonial consent** — the four reviews (Christabel A., Georgetta B., Tmk W., Kym H.) are from the previous site; confirm they're real and consented. No photos used.
+9. **Theme** — final choice (default `heritage-navy`, `ACTIVE_THEME_ID`).
+10. **OG/share image** — currently the self-hosted 500×500 logo (`public/og-image.png`); supply a 1200×630 image to use `summary_large_image`.
 
 ## Done = `BUILD.md §9` release checklist fully ticked.
