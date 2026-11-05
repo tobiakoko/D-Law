@@ -11,9 +11,7 @@ const FOCUSABLE = [
 ].join(',');
 
 function getFocusable(root: HTMLElement): HTMLElement[] {
-  return Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
-    (el) => !el.hasAttribute('inert') && el.getClientRects().length > 0,
-  );
+  return Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter((el) => !el.closest('[hidden], [inert]'));
 }
 
 interface ModalProps {

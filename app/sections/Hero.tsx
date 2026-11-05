@@ -15,15 +15,23 @@ export function Hero({ onOpenConsultation }: HeroProps) {
       aria-labelledby="hero-title"
       className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-b pt-10 pb-14 text-stone-100 sm:pt-16 sm:pb-20 ${currentTheme.heroGradient}`}
     >
-      <div className="pointer-events-none absolute -top-40 right-0 h-[550px] w-[550px] rounded-full bg-accent opacity-15 blur-[140px]" aria-hidden="true" />
-      <div className="pointer-events-none absolute bottom-0 left-[-100px] h-[450px] w-[450px] rounded-full bg-blue-900 opacity-20 blur-[120px]" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute -top-40 right-0 h-[550px] w-[550px] rounded-full bg-accent opacity-15 blur-[140px]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 left-[-100px] h-[450px] w-[450px] rounded-full bg-blue-900 opacity-20 blur-[120px]"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="flex flex-col justify-center lg:col-span-7">
             <p className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-widest">
               <span className="text-accent">{CONTACT_INFO.officeName}</span>
-              <span aria-hidden="true" className="text-stone-500">·</span>
+              <span aria-hidden="true" className="text-stone-500">
+                ·
+              </span>
               <span className="text-stone-300">{CONTACT_INFO.city}, Florida</span>
             </p>
 
@@ -70,7 +78,9 @@ export function Hero({ onOpenConsultation }: HeroProps) {
 
             <p className="mt-5 flex items-center gap-2 text-xs text-stone-400">
               <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
-              <span>In-Person Consultations in {CONTACT_INFO.city} · Video & Phone Across Florida and Internationally</span>
+              <span>
+                In-Person Consultations in {CONTACT_INFO.city} · Video & Phone Across Florida and Internationally
+              </span>
             </p>
           </div>
 
@@ -138,7 +148,9 @@ export function Hero({ onOpenConsultation }: HeroProps) {
               className={`flex flex-col pr-4 ${i < FIRM_STATS.length - 1 ? 'md:border-r md:border-stone-800/80' : ''}`}
             >
               <dt className="order-2 mt-1 text-xs font-medium text-stone-200 sm:text-sm">{stat.label}</dt>
-              <dd className="order-1 font-serif text-3xl font-bold tabular-nums text-accent sm:text-4xl">{stat.value}</dd>
+              <dd className="order-1 font-serif text-3xl font-bold tabular-nums text-accent sm:text-4xl">
+                {stat.value}
+              </dd>
               <dd className="order-3 mt-0.5 text-xs text-stone-400">{stat.detail}</dd>
             </div>
           ))}

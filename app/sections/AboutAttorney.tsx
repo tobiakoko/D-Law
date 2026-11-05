@@ -11,16 +11,35 @@ export const ABOUT_TABS = [
 type TabId = (typeof ABOUT_TABS)[number]['id'];
 
 const VALUES = [
-  { id: 'compassion', Icon: HeartHandshake, title: 'Compassion', text: 'Deeply understanding the human and family stakes behind every court filing and visa petition.' },
-  { id: 'integrity', Icon: ShieldCheck, title: 'Integrity', text: 'Honest, transparent assessments from day one with no inflated promises or hidden billing surprises.' },
-  { id: 'precision', Icon: Compass, title: 'Precision', text: 'Meticulous legal research, rigorous contract drafting, and trial-ready preparation.' },
+  {
+    id: 'compassion',
+    Icon: HeartHandshake,
+    title: 'Compassion',
+    text: 'Deeply understanding the human and family stakes behind every court filing and visa petition.',
+  },
+  {
+    id: 'integrity',
+    Icon: ShieldCheck,
+    title: 'Integrity',
+    text: 'Honest, transparent assessments from day one with no inflated promises or hidden billing surprises.',
+  },
+  {
+    id: 'precision',
+    Icon: Compass,
+    title: 'Precision',
+    text: 'Meticulous legal research, rigorous contract drafting, and trial-ready preparation.',
+  },
 ];
 
 const CREDENTIAL_ICONS = { education: GraduationCap, license: Award, location: MapPin } as const;
 
 export function AboutAttorney() {
   const [activeTab, setActiveTab] = useState<TabId>('journey');
-  const tabRefs = useRef<Record<TabId, HTMLButtonElement | null>>({ journey: null, credentials: null, philosophy: null });
+  const tabRefs = useRef<Record<TabId, HTMLButtonElement | null>>({
+    journey: null,
+    credentials: null,
+    philosophy: null,
+  });
 
   const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const index = ABOUT_TABS.findIndex((t) => t.id === activeTab);
@@ -45,17 +64,26 @@ export function AboutAttorney() {
   });
 
   return (
-    <section id="about-attorney" aria-labelledby="about-title" className="border-b border-stone-200 bg-stone-50/50 py-16 sm:py-24">
+    <section
+      id="about-attorney"
+      aria-labelledby="about-title"
+      className="border-b border-stone-200 bg-stone-50/50 py-16 sm:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-accent-ink">The Advocate Behind Your Rights</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-accent-ink">
+            The Advocate Behind Your Rights
+          </p>
           <h2 id="about-title" className="text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
             Attorney {CONTACT_INFO.attorneyName}
           </h2>
-          <p className="mt-2 text-sm font-medium uppercase tracking-wider text-stone-600">{CONTACT_INFO.attorneyTitle}</p>
+          <p className="mt-2 text-sm font-medium uppercase tracking-wider text-stone-600">
+            {CONTACT_INFO.attorneyTitle}
+          </p>
           <p className="mt-4 text-base font-light leading-relaxed text-stone-600">
-            Combining over two decades of courtroom depth with firsthand understanding of the immigrant and working-family
-            experience. A legal practice founded on respect, honest communication, and tireless preparation.
+            Combining over two decades of courtroom depth with firsthand understanding of the immigrant and
+            working-family experience. A legal practice founded on respect, honest communication, and tireless
+            preparation.
           </p>
         </div>
 
@@ -92,7 +120,10 @@ export function AboutAttorney() {
           </div>
         </div>
 
-        <div {...panelProps('journey')} className="mx-auto max-w-4xl rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink">
+        <div
+          {...panelProps('journey')}
+          className="mx-auto max-w-4xl rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink"
+        >
           <ol className="relative space-y-8 border-l-2 border-accent/50 pl-6 sm:space-y-10 sm:pl-8">
             {JOURNEY_MILESTONES.map((m) => (
               <li key={m.id} className="group relative">
@@ -102,8 +133,12 @@ export function AboutAttorney() {
                 />
                 <div className="rounded-xl border border-stone-200 bg-white p-5 transition-all hover:shadow-md sm:p-6">
                   <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent-ink">{m.period}</span>
-                    <span className="rounded bg-stone-100 px-2.5 py-0.5 text-[11px] font-medium text-stone-600">{m.badge}</span>
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent-ink">
+                      {m.period}
+                    </span>
+                    <span className="rounded bg-stone-100 px-2.5 py-0.5 text-[11px] font-medium text-stone-600">
+                      {m.badge}
+                    </span>
                   </div>
                   <h3 className="text-lg font-bold text-ink sm:text-xl">{m.title}</h3>
                   <p className="mt-2 text-sm font-light leading-relaxed text-stone-600">{m.description}</p>
@@ -113,12 +148,18 @@ export function AboutAttorney() {
           </ol>
         </div>
 
-        <div {...panelProps('credentials')} className="mx-auto max-w-4xl rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink">
+        <div
+          {...panelProps('credentials')}
+          className="mx-auto max-w-4xl rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink"
+        >
           <ul className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2">
             {CREDENTIALS.map((cred) => {
               const Icon = CREDENTIAL_ICONS[cred.type];
               return (
-                <li key={`${cred.institution}-${cred.degree}`} className="flex flex-col rounded-xl border border-stone-200 bg-white p-6 transition-all hover:shadow-md">
+                <li
+                  key={`${cred.institution}-${cred.degree}`}
+                  className="flex flex-col rounded-xl border border-stone-200 bg-white p-6 transition-all hover:shadow-md"
+                >
                   <div className="mb-3 flex items-center justify-between">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 text-accent-ink">
                       <Icon className="h-5 w-5" aria-hidden="true" />
@@ -126,7 +167,9 @@ export function AboutAttorney() {
                     {cred.year && <span className="font-mono text-xs font-semibold text-stone-600">{cred.year}</span>}
                   </div>
                   <h3 className="text-base font-bold text-ink sm:text-lg">{cred.degree}</h3>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent-ink">{cred.institution}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent-ink">
+                    {cred.institution}
+                  </p>
                   <p className="mt-3 text-xs leading-relaxed text-stone-600">{cred.detail}</p>
                 </li>
               );
@@ -134,12 +177,22 @@ export function AboutAttorney() {
           </ul>
         </div>
 
-        <div {...panelProps('philosophy')} className="mx-auto max-w-3xl space-y-6 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink">
+        <div
+          {...panelProps('philosophy')}
+          className="mx-auto max-w-3xl space-y-6 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink"
+        >
           <figure className="relative overflow-hidden rounded-2xl border border-white/10 bg-brand p-8 text-stone-100 sm:p-10">
-            <div className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-accent opacity-20 blur-3xl" aria-hidden="true" />
+            <div
+              className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-accent opacity-20 blur-3xl"
+              aria-hidden="true"
+            />
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent">Core Commitment</p>
-            <blockquote className="font-serif text-xl italic leading-relaxed text-white sm:text-2xl">&ldquo;{FIRM_MOTTO}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-xs uppercase tracking-wider text-stone-400">— {CONTACT_INFO.officeName}</figcaption>
+            <blockquote className="font-serif text-xl italic leading-relaxed text-white sm:text-2xl">
+              &ldquo;{FIRM_MOTTO}&rdquo;
+            </blockquote>
+            <figcaption className="mt-4 text-xs uppercase tracking-wider text-stone-400">
+              — {CONTACT_INFO.officeName}
+            </figcaption>
           </figure>
 
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">

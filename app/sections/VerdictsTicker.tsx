@@ -16,7 +16,11 @@ export function VerdictsTicker({ onOpenConsultation }: VerdictsTickerProps) {
     selectedCategory === ALL ? CASE_RESULTS : CASE_RESULTS.filter((r) => r.category === selectedCategory);
 
   return (
-    <section id="case-results" aria-labelledby="case-results-title" className="border-b border-stone-200 bg-white py-14 sm:py-20">
+    <section
+      id="case-results"
+      aria-labelledby="case-results-title"
+      className="border-b border-stone-200 bg-white py-14 sm:py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-6 border-b border-stone-200 pb-6 md:flex-row md:items-end">
           <div>

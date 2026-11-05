@@ -31,7 +31,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             aria-label={`${CONTACT_INFO.officeName} — home`}
           >
             <span
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent-hover/40 bg-brand-surface font-serif text-lg font-bold text-accent-hover shadow-sm transition-colors group-hover:border-accent-hover"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent-hover/40 bg-brand-surface font-serif text-[13px] font-bold tracking-tight text-accent-hover shadow-sm transition-colors group-hover:border-accent-hover"
               aria-hidden="true"
             >
               OKP
@@ -44,7 +44,10 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             </span>
           </a>
 
-          <nav aria-label="Primary" className="hidden items-center gap-6 text-sm font-medium text-stone-300 lg:flex lg:gap-8">
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-6 text-sm font-medium text-stone-300 lg:flex lg:gap-8"
+          >
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -92,7 +95,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             <div className="flex items-center justify-between border-b border-stone-800 pb-6">
               <div className="flex items-center gap-2.5">
                 <span
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-accent bg-brand-surface font-serif text-sm font-bold text-accent"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-accent bg-brand-surface font-serif text-[11px] font-bold tracking-tight text-accent"
                   aria-hidden="true"
                 >
                   OKP

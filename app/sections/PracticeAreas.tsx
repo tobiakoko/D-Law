@@ -21,11 +21,17 @@ export function PracticeAreas({ onSelectPractice, onBookConsultation }: Practice
   const filteredAreas = filterPracticeAreas(activeFilter);
 
   return (
-    <section id="practice-areas" aria-labelledby="practice-areas-title" className="border-b border-stone-200 bg-white py-16 sm:py-24">
+    <section
+      id="practice-areas"
+      aria-labelledby="practice-areas-title"
+      className="border-b border-stone-200 bg-white py-16 sm:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-6 border-b border-stone-200 pb-10 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-accent-ink">Comprehensive Legal Representation</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-accent-ink">
+              Comprehensive Legal Representation
+            </p>
             <h2 id="practice-areas-title" className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
               Our Practice Areas
             </h2>
@@ -82,7 +88,9 @@ export function PracticeAreas({ onSelectPractice, onBookConsultation }: Practice
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-accent/30 bg-accent/10">
                       <Icon className="h-5 w-5 text-accent-ink" aria-hidden="true" />
                     </div>
-                    <span className="font-mono text-xs font-medium tracking-tight text-stone-600">{practice.casesCount}</span>
+                    <span className="font-mono text-xs font-medium tracking-tight text-stone-600">
+                      {practice.casesCount}
+                    </span>
                   </div>
 
                   <h3 className="text-xl font-bold text-ink sm:text-2xl">{practice.title}</h3>
@@ -106,7 +114,10 @@ export function PracticeAreas({ onSelectPractice, onBookConsultation }: Practice
                     aria-label={`View details: ${practice.title}`}
                   >
                     <span>View Details</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    <ArrowRight
+                      className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
                   </button>
 
                   <button

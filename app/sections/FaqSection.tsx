@@ -43,7 +43,10 @@ export function FaqSection({ onOpenConsultation }: FaqSectionProps) {
             <label htmlFor="faq-search" className="sr-only">
               Search frequently asked questions
             </label>
-            <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-stone-500" aria-hidden="true" />
+            <Search
+              className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-stone-500"
+              aria-hidden="true"
+            />
             <input
               id="faq-search"
               type="search"

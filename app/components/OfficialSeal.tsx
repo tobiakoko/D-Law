@@ -61,8 +61,14 @@ export function OfficialSeal({ className = '', size = 120, decorative = false }:
       </text>
 
       <g fill={accent}>
-        <polygon points="26,100 28,95 33,95 29,92 31,87 26,90 21,87 23,92 19,95 24,95" transform="translate(4, 5) scale(0.6)" />
-        <polygon points="174,100 176,95 181,95 177,92 179,87 174,90 169,87 171,92 167,95 172,95" transform="translate(-14, 5) scale(0.6)" />
+        <polygon
+          points="26,100 28,95 33,95 29,92 31,87 26,90 21,87 23,92 19,95 24,95"
+          transform="translate(4, 5) scale(0.6)"
+        />
+        <polygon
+          points="174,100 176,95 181,95 177,92 179,87 174,90 169,87 171,92 167,95 172,95"
+          transform="translate(-14, 5) scale(0.6)"
+        />
       </g>
 
       {/* Scales of justice */}
@@ -81,7 +87,16 @@ export function OfficialSeal({ className = '', size = 120, decorative = false }:
         <path d="M 114,98 Q 128,108 142,98 Z" fill={accent} fillOpacity="0.25" strokeWidth="1.5" />
       </g>
 
-      <text x="100" y="126" textAnchor="middle" fill={accent} fontSize="5.5" letterSpacing="0.2em" fontFamily="Cinzel, serif" fontWeight="600">
+      <text
+        x="100"
+        y="126"
+        textAnchor="middle"
+        fill={accent}
+        fontSize="5.5"
+        letterSpacing="0.2em"
+        fontFamily="Cinzel, serif"
+        fontWeight="600"
+      >
         LEX · JUSTITIA · VERITAS
       </text>
     </svg>

@@ -68,10 +68,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
   {
     id: 'immigration',
     title: 'Immigration Law',
-    shortDesc: 'Navigate complex immigration processes with confidence, from visa applications to permanent residency and citizenship.',
+    shortDesc:
+      'Navigate complex immigration processes with confidence, from visa applications to permanent residency and citizenship.',
     casesCount: '800+ cases handled',
     iconName: 'Globe',
-    overview: 'Attorney Osei K. Prempeh brings personal understanding and seasoned expertise to federal immigration proceedings. As an immigrant himself, he understands the emotional weight and profound life impact of every petition.',
+    overview:
+      'Attorney Osei K. Prempeh brings personal understanding and seasoned expertise to federal immigration proceedings. As an immigrant himself, he understands the emotional weight and profound life impact of every petition.',
     keyServices: [
       'Family-Based Petitions (I-130, Adjustment of Status)',
       'Naturalization & U.S. Citizenship (N-400)',
@@ -80,15 +82,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Deportation Defense & Removal Proceedings',
       'Consular Processing & Travel Waivers',
     ],
-    clientOutcomes: 'Successfully guided over 800 individuals and families through USCIS approvals, green card issuances, and citizenship oaths.',
+    clientOutcomes:
+      'Successfully guided over 800 individuals and families through USCIS approvals, green card issuances, and citizenship oaths.',
   },
   {
     id: 'personal-injury',
     title: 'Personal Injury',
-    shortDesc: 'When life takes an unexpected turn, we fight for the full financial compensation and medical care you and your family deserve.',
+    shortDesc:
+      'When life takes an unexpected turn, we fight for the full financial compensation and medical care you and your family deserve.',
     casesCount: '450+ cases handled',
     iconName: 'Shield',
-    overview: 'Our personal injury practice is built on relentless advocacy. We stand between injured clients and aggressive insurance carriers to secure compensation for medical expenses, lost wages, and long-term suffering.',
+    overview:
+      'Our personal injury practice is built on relentless advocacy. We stand between injured clients and aggressive insurance carriers to secure compensation for medical expenses, lost wages, and long-term suffering.',
     keyServices: [
       'Motor Vehicle & Truck Collisions',
       'Motorcycle & Pedestrian Accidents',
@@ -97,15 +102,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Catastrophic Injury Settlements',
       'Insurance Bad Faith Negotiation',
     ],
-    clientOutcomes: 'Recovered millions in financial settlements and verdicts for injured accident victims across Central Florida.',
+    clientOutcomes:
+      'Recovered millions in financial settlements and verdicts for injured accident victims across Central Florida.',
   },
   {
     id: 'international-business',
     title: 'International Business',
-    shortDesc: 'Expand and protect your enterprise globally with strategic cross-border transaction guidance and regulatory compliance.',
+    shortDesc:
+      'Expand and protect your enterprise globally with strategic cross-border transaction guidance and regulatory compliance.',
     casesCount: '300+ cases handled',
     iconName: 'Scale',
-    overview: 'Holding a Master of Laws (LL.M.) in International Business Law from Stetson University, Attorney Prempeh advises multi-jurisdictional ventures on contract enforcement, trade regulations, and international partnerships.',
+    overview:
+      'Holding a Master of Laws (LL.M.) in International Business Law from Stetson University, Attorney Prempeh advises multi-jurisdictional ventures on contract enforcement, trade regulations, and international partnerships.',
     keyServices: [
       'Cross-Border Commercial Contracts',
       'International Joint Ventures & Distributorships',
@@ -114,15 +122,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'International Dispute Resolution & Arbitration',
       'Import / Export Licensing and Due Diligence',
     ],
-    clientOutcomes: 'Counseled international entrepreneurs and multinational firms in structuring multi-million dollar cross-border deals.',
+    clientOutcomes:
+      'Counseled international entrepreneurs and multinational firms in structuring multi-million dollar cross-border deals.',
   },
   {
     id: 'family-law',
     title: 'Family Law',
-    shortDesc: 'Protecting what matters most during life transitions with compassionate, dignified counsel through divorce, custody, and adoption.',
+    shortDesc:
+      'Protecting what matters most during life transitions with compassionate, dignified counsel through divorce, custody, and adoption.',
     casesCount: '600+ cases handled',
     iconName: 'Users',
-    overview: 'Family disputes require legal acumen tempered with empathy and dispute mediation skills. Attorney Prempeh provides level-headed guidance aimed at preserving familial relationships and child well-being.',
+    overview:
+      'Family disputes require legal acumen tempered with empathy and dispute mediation skills. Attorney Prempeh provides level-headed guidance aimed at preserving familial relationships and child well-being.',
     keyServices: [
       'Contested & Uncontested Dissolution of Marriage',
       'Child Custody & Timesharing Agreements',
@@ -131,15 +142,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Pre-Nuptial & Post-Nuptial Agreements',
       'Family Mediation & Alternative Dispute Resolution',
     ],
-    clientOutcomes: 'Resolved hundreds of complex domestic matters with an emphasis on equitable solutions and minimizing courtroom trauma.',
+    clientOutcomes:
+      'Resolved hundreds of complex domestic matters with an emphasis on equitable solutions and minimizing courtroom trauma.',
   },
   {
     id: 'contract-disputes',
     title: 'Contract Disputes',
-    shortDesc: 'When business agreements break down, we step in to resolve complex commercial disputes efficiently, safeguarding your bottom line.',
+    shortDesc:
+      'When business agreements break down, we step in to resolve complex commercial disputes efficiently, safeguarding your bottom line.',
     casesCount: '350+ cases handled',
     iconName: 'Gavel',
-    overview: 'Commercial contracts form the backbone of your enterprise. When a party fails to uphold contractual terms, our litigation and mediation expertise protects your financial interests and business reputation.',
+    overview:
+      'Commercial contracts form the backbone of your enterprise. When a party fails to uphold contractual terms, our litigation and mediation expertise protects your financial interests and business reputation.',
     keyServices: [
       'Breach of Commercial Agreement Litigation',
       'Partnership & Shareholder Disputes',
@@ -148,15 +162,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Debt Recovery & Settlement Negotiations',
       'Pre-Litigation Strategic Mediation',
     ],
-    clientOutcomes: 'Protected commercial assets and secured favorable outcomes for Tampa Bay entrepreneurs and mid-sized enterprises.',
+    clientOutcomes:
+      'Protected commercial assets and secured favorable outcomes for Tampa Bay entrepreneurs and mid-sized enterprises.',
   },
   {
     id: 'criminal-defense',
     title: 'Criminal Defense',
-    shortDesc: 'Your freedom and future are our top priority. Aggressive advocacy and meticulous preparation against all state and federal charges.',
+    shortDesc:
+      'Your freedom and future are our top priority. Aggressive advocacy and meticulous preparation against all state and federal charges.',
     casesCount: '500+ cases handled',
     iconName: 'ShieldAlert',
-    overview: 'Facing criminal allegations is one of the most frightening experiences in life. We scrutinize evidence, challenge improper police procedures, and fight tirelessly for charge dismissals, reductions, or acquittals.',
+    overview:
+      'Facing criminal allegations is one of the most frightening experiences in life. We scrutinize evidence, challenge improper police procedures, and fight tirelessly for charge dismissals, reductions, or acquittals.',
     keyServices: [
       'DUI & Traffic Offenses',
       'Misdemeanors & Felony Offense Defense',
@@ -165,7 +182,8 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Probation Violation Hearings',
       'Record Sealing & Expungement Petitions',
     ],
-    clientOutcomes: 'Defended hundreds of individuals in Florida courts, achieving dismissals, acquitted charges, and favorable plea alternatives.',
+    clientOutcomes:
+      'Defended hundreds of individuals in Florida courts, achieving dismissals, acquitted charges, and favorable plea alternatives.',
   },
 ];
 
@@ -183,9 +201,21 @@ export type PracticeFilterId = (typeof PRACTICE_FILTERS)[number]['id'];
 
 /** Simplified labels for the QuickAssessment navigator (ids map to PRACTICE_AREAS). */
 export const ASSESSMENT_TOPICS: AssessmentTopic[] = [
-  { id: 'immigration', label: 'Immigration & Green Card', desc: 'Visas, USCIS interviews, citizenship or deportation defense' },
-  { id: 'personal-injury', label: 'Personal Injury / Accident', desc: 'Auto crash, slip & fall, medical bills, insurance claims' },
-  { id: 'international-business', label: 'Business & Contracts', desc: 'Cross-border deals, LLC setup, commercial agreements' },
+  {
+    id: 'immigration',
+    label: 'Immigration & Green Card',
+    desc: 'Visas, USCIS interviews, citizenship or deportation defense',
+  },
+  {
+    id: 'personal-injury',
+    label: 'Personal Injury / Accident',
+    desc: 'Auto crash, slip & fall, medical bills, insurance claims',
+  },
+  {
+    id: 'international-business',
+    label: 'Business & Contracts',
+    desc: 'Cross-border deals, LLC setup, commercial agreements',
+  },
   { id: 'family-law', label: 'Family Law & Custody', desc: 'Divorce, child custody, support or mediation' },
   { id: 'criminal-defense', label: 'Criminal Defense', desc: 'DUI, misdemeanor, felony or court representation' },
 ];
@@ -206,7 +236,12 @@ export type UrgencyId = (typeof URGENCY_OPTIONS)[number]['id'];
 export const FIRM_STATS: FirmStat[] = [
   { id: 'years', value: '20+', label: 'Years of Experience', detail: 'Continuously licensed since March 2004' },
   { id: 'matters', value: '1,000+', label: 'Matters Resolved', detail: 'Across state, federal & immigration courts' },
-  { id: 'areas', value: String(PRACTICE_AREAS.length), label: 'Core Practice Areas', detail: 'Immigration, Injury, Business & Family' },
+  {
+    id: 'areas',
+    value: String(PRACTICE_AREAS.length),
+    label: 'Core Practice Areas',
+    detail: 'Immigration, Injury, Business & Family',
+  },
   { id: 'access', value: 'Direct', label: 'Attorney Access', detail: 'You work with Attorney Prempeh personally' },
 ];
 
@@ -229,42 +264,48 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     id: 'arrival',
     period: '1981',
     title: 'Arrival in the United States',
-    description: 'Born in Kumasi, Ghana, Attorney Prempeh immigrated to the Washington, D.C. metropolitan area, setting out with ambition, work ethic, and determination to pursue the American dream.',
+    description:
+      'Born in Kumasi, Ghana, Attorney Prempeh immigrated to the Washington, D.C. metropolitan area, setting out with ambition, work ethic, and determination to pursue the American dream.',
     badge: 'Immigrant Roots',
   },
   {
     id: 'work',
     period: '1981 — 1992',
     title: 'Grounded in Community & Hard Work',
-    description: 'Worked as a cab driver for six years and served with the United States Postal Service for five years. These working years instilled an enduring empathy for working-class families and the daily challenges they face.',
+    description:
+      'Worked as a cab driver for six years and served with the United States Postal Service for five years. These working years instilled an enduring empathy for working-class families and the daily challenges they face.',
     badge: 'Public Service & Labor',
   },
   {
     id: 'bs',
     period: '1997',
     title: 'B.S. in Administration of Justice',
-    description: 'Earned undergraduate degree at George Mason University in Virginia, focusing on criminal justice, constitutional guarantees, and judicial administration.',
+    description:
+      'Earned undergraduate degree at George Mason University in Virginia, focusing on criminal justice, constitutional guarantees, and judicial administration.',
     badge: 'George Mason Univ.',
   },
   {
     id: 'jd',
     period: '2000',
     title: 'Juris Doctor (J.D.) from Stetson Law',
-    description: 'Graduated from Stetson University College of Law in Florida, celebrated nationally for premier trial advocacy, litigation preparation, and ethics.',
+    description:
+      'Graduated from Stetson University College of Law in Florida, celebrated nationally for premier trial advocacy, litigation preparation, and ethics.',
     badge: 'Stetson Law',
   },
   {
     id: 'llm',
     period: '2004',
     title: 'Master of Laws (LL.M.) & Florida Bar Admission',
-    description: 'Completed postgraduate Master of Laws in International Business Law at Stetson, and was formally admitted to The Florida Bar on March 26, 2004.',
+    description:
+      'Completed postgraduate Master of Laws in International Business Law at Stetson, and was formally admitted to The Florida Bar on March 26, 2004.',
     badge: 'Florida Bar Admitted',
   },
   {
     id: 'practice',
     period: '2004 — Present',
     title: '20+ Years of Dedicated Advocacy',
-    description: 'Two decades serving clients across Tampa Bay and nationwide in immigration, personal injury, international business, and family disputes with unwavering integrity.',
+    description:
+      'Two decades serving clients across Tampa Bay and nationwide in immigration, personal injury, international business, and family disputes with unwavering integrity.',
     badge: '20+ Years Practice',
   },
 ];
@@ -297,7 +338,8 @@ export const CREDENTIALS: Credential[] = [
     year: 'March 26, 2004',
     type: 'license',
     // TODO(attorney): confirm federal district court admission(s) before keeping that claim.
-    detail: 'Licensed in good standing to practice before all Florida State Courts. Over 20 years of continuous active practice.',
+    detail:
+      'Licensed in good standing to practice before all Florida State Courts. Over 20 years of continuous active practice.',
   },
   {
     institution: 'Tampa Bay Law Offices',
@@ -322,7 +364,8 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 'christabel-a',
     clientName: 'Christabel A.',
     caseType: 'Immigration',
-    quote: 'He is very professional and knowledgeable along with his staff. During my very stressful immigration issues with school and work, he provided professional assistance.',
+    quote:
+      'He is very professional and knowledgeable along with his staff. During my very stressful immigration issues with school and work, he provided professional assistance.',
     rating: 5,
   },
   {
@@ -430,7 +473,8 @@ export const FEE_PLANS: FeePlan[] = [
     badge: '0%',
     eyebrow: 'Personal Injury & Collisions',
     title: 'Contingency Fee',
-    description: 'For accident and collision victims, there are no upfront attorney fees. Fees are paid only from a recovery, as set out in a written contingency agreement.',
+    description:
+      'For accident and collision victims, there are no upfront attorney fees. Fees are paid only from a recovery, as set out in a written contingency agreement.',
     points: [
       'No attorney fee unless we win or settle your case',
       'Free initial accident evaluation',
@@ -459,7 +503,8 @@ export const FEE_PLANS: FeePlan[] = [
     badge: '★',
     eyebrow: 'Business & Family Law',
     title: 'Transparent Hourly & Mediation',
-    description: 'Tailored representation with clear statements, detailed time accounting, and alternative dispute resolution options.',
+    description:
+      'Tailored representation with clear statements, detailed time accounting, and alternative dispute resolution options.',
     points: [
       'Emphasis on pre-trial mediation to cut costs',
       'Itemized billing statements provided regularly',
@@ -489,25 +534,29 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-3',
     question: 'What is your fee structure and do you offer payment arrangements?',
-    answer: 'Our fee structure depends on the legal matter. Personal Injury cases are handled on a contingency fee basis — you pay no attorney fee unless we win or settle your case. Immigration, Business, and Family matters are handled with flat fees or hourly rates discussed upfront during your consultation, with payment plans available.',
+    answer:
+      'Our fee structure depends on the legal matter. Personal Injury cases are handled on a contingency fee basis — you pay no attorney fee unless we win or settle your case. Immigration, Business, and Family matters are handled with flat fees or hourly rates discussed upfront during your consultation, with payment plans available.',
     category: 'fees',
   },
   {
     id: 'faq-4',
     question: 'Do you offer remote consultations if I cannot visit the Tampa office?',
-    answer: 'Yes. We regularly conduct video consultations and phone meetings for clients throughout Florida, out-of-state, and internationally. Many immigration and international business matters can be handled remotely.',
+    answer:
+      'Yes. We regularly conduct video consultations and phone meetings for clients throughout Florida, out-of-state, and internationally. Many immigration and international business matters can be handled remotely.',
     category: 'consultation',
   },
   {
     id: 'faq-5',
     question: 'How long does a typical legal case take from start to finish?',
-    answer: 'Timelines vary widely based on the court, jurisdiction, and federal processing times. For instance, immigration petitions may take anywhere from 4 to 18 months depending on USCIS backlogs, while personal injury claims often resolve within 6 to 12 months once medical treatment is concluded. Attorney Prempeh provides honest, realistic milestone projections from day one.',
+    answer:
+      'Timelines vary widely based on the court, jurisdiction, and federal processing times. For instance, immigration petitions may take anywhere from 4 to 18 months depending on USCIS backlogs, while personal injury claims often resolve within 6 to 12 months once medical treatment is concluded. Attorney Prempeh provides honest, realistic milestone projections from day one.',
     category: 'process',
   },
   {
     id: 'faq-6',
     question: 'What should I prepare for my first appointment?',
-    answer: 'Please bring any relevant documents related to your matter: for immigration, bring passports, previous USCIS notices, visas, and I-94 records; for personal injury, bring police reports, medical records, insurance cards, and photographs; for business disputes, bring executed contracts, email communications, and invoices.',
+    answer:
+      'Please bring any relevant documents related to your matter: for immigration, bring passports, previous USCIS notices, visas, and I-94 records; for personal injury, bring police reports, medical records, insurance cards, and photographs; for business disputes, bring executed contracts, email communications, and invoices.',
     category: 'process',
   },
 ];

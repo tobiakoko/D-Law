@@ -53,7 +53,9 @@ export function PracticeAreaModal({ practiceArea, onClose, onBookConsultation }:
             </div>
 
             <div>
-              <h3 className="mb-3 font-sans text-xs font-bold uppercase tracking-wider text-stone-600">Key Matters We Handle</h3>
+              <h3 className="mb-3 font-sans text-xs font-bold uppercase tracking-wider text-stone-600">
+                Key Matters We Handle
+              </h3>
               <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {practiceArea.keyServices.map((service) => (
                   <li
@@ -71,7 +73,9 @@ export function PracticeAreaModal({ practiceArea, onClose, onBookConsultation }:
               <div className="flex items-start gap-3">
                 <FileText className="mt-0.5 h-5 w-5 shrink-0 text-accent-ink" aria-hidden="true" />
                 <div>
-                  <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-stone-900">Client Outcomes</h3>
+                  <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-stone-900">
+                    Client Outcomes
+                  </h3>
                   <p className="mt-1 text-xs leading-relaxed text-stone-700">{practiceArea.clientOutcomes}</p>
                 </div>
               </div>

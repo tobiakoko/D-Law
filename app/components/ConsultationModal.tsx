@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Calendar, Mail, MapPin, Phone, Send, Video, X } from 'lucide-react';
 import { Modal } from '~/components/Modal';
+import { navigateTo } from '~/lib/navigate';
 import {
   CONSULTATION_TIME_SLOTS,
   CONTACT_INFO,
@@ -128,7 +129,7 @@ export function ConsultationModal({ isOpen, onClose, initialPracticeArea }: Cons
     const href = buildConsultationMailto(formData);
     setMailtoHref(href);
     try {
-      window.location.href = href;
+      navigateTo(href);
       setStatus('sent');
     } catch {
       setStatus('error');
@@ -139,11 +140,17 @@ export function ConsultationModal({ isOpen, onClose, initialPracticeArea }: Cons
     <div className="flex flex-col gap-2 border-t border-stone-200 bg-stone-50 px-6 py-4 text-xs text-stone-700 sm:flex-row sm:items-center sm:justify-between">
       <span>Prefer to reach us directly?</span>
       <span className="flex flex-wrap gap-x-4 gap-y-1">
-        <a href={`tel:${CONTACT_INFO.phoneTel}`} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-sm font-semibold text-accent-ink underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink">
+        <a
+          href={`tel:${CONTACT_INFO.phoneTel}`}
+          className="inline-flex min-h-[32px] items-center gap-1.5 rounded-sm font-semibold text-accent-ink underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink"
+        >
           <Phone className="h-3.5 w-3.5" aria-hidden="true" />
           {CONTACT_INFO.phone}
         </a>
-        <a href={`mailto:${CONTACT_INFO.email}`} className="inline-flex min-h-[32px] items-center gap-1.5 rounded-sm font-semibold text-accent-ink underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink">
+        <a
+          href={`mailto:${CONTACT_INFO.email}`}
+          className="inline-flex min-h-[32px] items-center gap-1.5 rounded-sm font-semibold text-accent-ink underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink"
+        >
           <Mail className="h-3.5 w-3.5" aria-hidden="true" />
           {CONTACT_INFO.email}
         </a>
@@ -270,7 +277,10 @@ export function ConsultationModal({ isOpen, onClose, initialPracticeArea }: Cons
                 <legend className={labelClass}>Preferred Time (Eastern)</legend>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {CONSULTATION_TIME_SLOTS.map((time) => (
-                    <label key={time} className={`${choiceClass} min-h-[42px] items-center justify-center text-xs font-medium text-stone-700`}>
+                    <label
+                      key={time}
+                      className={`${choiceClass} min-h-[42px] items-center justify-center text-xs font-medium text-stone-700`}
+                    >
                       <input
                         type="radio"
                         name="preferredTime"
@@ -403,9 +413,9 @@ export function ConsultationModal({ isOpen, onClose, initialPracticeArea }: Cons
                 One more step: press Send
               </h3>
               <p className="mx-auto mt-2 max-w-md text-sm text-stone-700">
-                Your email app should have opened with your request addressed to{' '}
-                <strong>{CONTACT_INFO.email}</strong>. Your request is <strong>not delivered</strong> until you press{' '}
-                <strong>Send</strong> in your mail app. The office will reply to confirm a time.
+                Your email app should have opened with your request addressed to <strong>{CONTACT_INFO.email}</strong>.
+                Your request is <strong>not delivered</strong> until you press <strong>Send</strong> in your mail app.
+                The office will reply to confirm a time.
               </p>
             </div>
           ) : (

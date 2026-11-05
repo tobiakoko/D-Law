@@ -7,7 +7,11 @@ interface FeeTransparencyProps {
 
 export function FeeTransparency({ onOpenConsultation }: FeeTransparencyProps) {
   return (
-    <section id="fee-transparency" aria-labelledby="fees-title" className="border-b border-stone-200 bg-stone-50 py-16 sm:py-20">
+    <section
+      id="fee-transparency"
+      aria-labelledby="fees-title"
+      className="border-b border-stone-200 bg-stone-50 py-16 sm:py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-2 flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-widest text-accent-ink">
@@ -32,7 +36,9 @@ export function FeeTransparency({ onOpenConsultation }: FeeTransparencyProps) {
               <div>
                 <div
                   className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold ${
-                    plan.featured ? 'bg-accent/20 text-accent-ink' : 'border border-stone-200 bg-stone-100 text-stone-800'
+                    plan.featured
+                      ? 'bg-accent/20 text-accent-ink'
+                      : 'border border-stone-200 bg-stone-100 text-stone-800'
                   }`}
                   aria-hidden="true"
                 >

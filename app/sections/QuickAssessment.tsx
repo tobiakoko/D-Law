@@ -14,7 +14,9 @@ export function QuickAssessment({ onSelectPracticeAndBook }: QuickAssessmentProp
 
   const optionClass = (selected: boolean) =>
     `flex cursor-pointer flex-col justify-center rounded-xl border p-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ink ${
-      selected ? 'border-accent bg-stone-50 shadow-xs ring-1 ring-accent' : 'border-stone-200 hover:border-stone-300 hover:bg-stone-50'
+      selected
+        ? 'border-accent bg-stone-50 shadow-xs ring-1 ring-accent'
+        : 'border-stone-200 hover:border-stone-300 hover:bg-stone-50'
     }`;
 
   return (

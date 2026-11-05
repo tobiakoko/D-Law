@@ -26,14 +26,18 @@ export function Footer({ onOpenConsultation }: FooterProps) {
             <div className="flex items-center gap-3">
               <OfficialSeal size={50} decorative />
               <div>
-                <p className="font-brand text-lg font-bold tracking-wider text-white">{CONTACT_INFO.shortName.toUpperCase()}</p>
-                <p className="text-xs font-semibold uppercase tracking-widest text-accent">{CONTACT_INFO.attorneyTitle}</p>
+                <p className="font-brand text-lg font-bold tracking-wider text-white">
+                  {CONTACT_INFO.shortName.toUpperCase()}
+                </p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+                  {CONTACT_INFO.attorneyTitle}
+                </p>
               </div>
             </div>
 
             <p className="max-w-sm text-xs font-light leading-relaxed text-stone-400 sm:text-sm">
-              Providing legal representation with integrity, seasoned expertise, and commitment to individuals, families,
-              and enterprises.
+              Providing legal representation with integrity, seasoned expertise, and commitment to individuals,
+              families, and enterprises.
             </p>
 
             <address className="space-y-2 pt-2 text-xs not-italic text-stone-400">
@@ -80,7 +84,11 @@ export function Footer({ onOpenConsultation }: FooterProps) {
             <ul className="space-y-2 text-xs">
               {PRACTICE_AREAS.map((p) => (
                 <li key={p.id}>
-                  <button type="button" onClick={() => onOpenConsultation(p.id)} className={`${linkClass} cursor-pointer text-left`}>
+                  <button
+                    type="button"
+                    onClick={() => onOpenConsultation(p.id)}
+                    className={`${linkClass} cursor-pointer text-left`}
+                  >
                     {p.title}
                   </button>
                 </li>

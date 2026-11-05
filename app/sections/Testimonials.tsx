@@ -13,7 +13,11 @@ export function Testimonials() {
   const current = TESTIMONIALS[activeIndex];
 
   return (
-    <section id="testimonials" aria-labelledby="testimonials-title" className="border-b border-white/10 bg-brand py-16 text-stone-100 sm:py-24">
+    <section
+      id="testimonials"
+      aria-labelledby="testimonials-title"
+      className="border-b border-white/10 bg-brand py-16 text-stone-100 sm:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-5">
@@ -62,7 +66,10 @@ export function Testimonials() {
           </div>
 
           <div className="lg:col-span-7">
-            <figure aria-live="polite" className="relative rounded-2xl border border-white/10 bg-brand-surface p-7 shadow-2xl sm:p-10">
+            <figure
+              aria-live="polite"
+              className="relative rounded-2xl border border-white/10 bg-brand-surface p-7 shadow-2xl sm:p-10"
+            >
               <Quote className="mb-6 h-10 w-10 text-accent opacity-30" aria-hidden="true" />
 
               <div className="mb-4 flex items-center gap-1" role="img" aria-label={`Rated ${current.rating} out of 5`}>
