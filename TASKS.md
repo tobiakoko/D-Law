@@ -24,11 +24,11 @@
 ---
 
 ## T2 — Port data & types (single source of truth) 🔒
-- [ ] Copy redesign `src/types/index.ts` → `app/types/index.ts` (unchanged).
-- [ ] Copy redesign `src/data/legalData.ts` → `app/data/firm.ts`. Update imports to `~/data/firm`.
-- [ ] ⚠️ Replace placeholder phones `(813) 555-0123/0124/0125` with `TODO(attorney)` markers + the one known real number `(813) 879-5919` as the office default candidate. Update `phoneTel`/`cellTel` to E.164 to match once confirmed.
-- [ ] Point FAQ answer `faq-2` at `CONTACT_INFO.phone` instead of a hardcoded number.
-- [ ] Leave `CASE_RESULTS` / verdict figures but tag each with `TODO(attorney): verify` (see T10).
+- [x] Copy redesign `src/types/index.ts` → `app/types/index.ts` (unchanged).
+- [x] Copy redesign `src/data/legalData.ts` → `app/data/firm.ts`. Update imports to `~/data/firm`.
+- [x] ⚠️ Replace placeholder phones `(813) 555-0123/0124/0125` with `TODO(attorney)` markers + the one known real number `(813) 879-5919` as the office default candidate. Update `phoneTel`/`cellTel` to E.164 to match once confirmed.
+- [x] Point FAQ answer `faq-2` at `CONTACT_INFO.phone` instead of a hardcoded number.
+- [x] Leave `CASE_RESULTS` / verdict figures but tag each with `TODO(attorney): verify` (see T10).
 - ✅ Nothing hardcodes contact facts; `typecheck` green; every `TODO(attorney)` is listed in "Client inputs needed" below.
 
 ---
