@@ -43,9 +43,9 @@
 
 ## T4 — Port sections & components (with framework rewiring)
 Port each redesign component into `app/sections/` or `app/components/` per CLAUDE.md §4, applying the Vite→RR7 rewiring (INSTRUCTIONS §10): change data imports to `~/data/firm`, move `<head>` meta into route `meta()`, keep `lucide-react` as-is.
-- [ ] `sections/`: Hero, VerdictsTicker, QuickAssessment, PracticeAreas, AboutAttorney, FeeTransparency, Testimonials, FaqSection, Navbar, Footer.
-- [ ] `components/`: ConsultationModal, PracticeAreaModal, MobileBottomBar, OfficialSeal.
-- [ ] Ensure PascalCase filenames everywhere.
+- [x] `sections/`: Hero, VerdictsTicker, QuickAssessment, PracticeAreas, AboutAttorney, FeeTransparency, Testimonials, FaqSection, Navbar, Footer.
+- [x] `components/`: ConsultationModal, PracticeAreaModal, MobileBottomBar, OfficialSeal.
+- [x] Ensure PascalCase filenames everywhere.
 - ✅ Each component compiles under RR7; no `@/*` imports; no references to `src/main.tsx`/`index.html`/AI-Studio files.
 
 ---
@@ -58,11 +58,11 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T6 — Fix the consultation form → direct email 🔒 (most important behavior fix)
-- [ ] Rewrite `ConsultationModal.handleSubmit` to build a `mailto:${firm.email}` link with name/phone/email/practice/date/time/format/notes as subject+body and open it (INSTRUCTIONS §5.1).
-- [ ] Change success copy to "press **Send** in your mail app" — do **not** claim the firm received it (INSTRUCTIONS §5.2).
-- [ ] Remove the "Attorney-Client Privilege protects this form" line; replace with "Do not include sensitive case details until representation is established."
-- [ ] Add always-visible `tel:` and `mailto:` fallbacks in the modal (for visitors with no mail client).
-- [ ] Model state as `status: 'editing' | 'sent' | 'error'` instead of the lone `submitted` boolean.
+- [x] Rewrite `ConsultationModal.handleSubmit` to build a `mailto:${firm.email}` link with name/phone/email/practice/date/time/format/notes as subject+body and open it (INSTRUCTIONS §5.1).
+- [x] Change success copy to "press **Send** in your mail app" — do **not** claim the firm received it (INSTRUCTIONS §5.2).
+- [x] Remove the "Attorney-Client Privilege protects this form" line; replace with "Do not include sensitive case details until representation is established."
+- [x] Add always-visible `tel:` and `mailto:` fallbacks in the modal (for visitors with no mail client).
+- [x] Model state as `status: 'editing' | 'sent' | 'error'` instead of the lone `submitted` boolean.
 - ✅ Submitting opens a pre-filled mail draft to the firm; copy is honest; fallbacks present; no false privilege claim.
 
 ---
