@@ -15,12 +15,12 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@react-router/node": "^7.18.5",
+    "@react-router/node": "^8.5.1",
     "isbot": "^5.1.27",
     "lucide-react": "^1.66.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.18.5"
+    "react-router": "^8.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
