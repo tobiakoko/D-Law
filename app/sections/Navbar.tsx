@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowRight, Calendar, Menu, Phone, X } from 'lucide-react';
 import { FirmLogo } from '~/components/FirmLogo';
 import { Modal } from '~/components/Modal';
-import { CONTACT_INFO } from '~/data/firm';
+import { CONTACT_INFO, PUBLISHED_CASE_RESULTS } from '~/data/firm';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -10,11 +10,11 @@ interface NavbarProps {
 
 export const NAV_LINKS = [
   { label: 'Practice Areas', href: '#practice-areas' },
-  { label: 'Case Results', href: '#case-results' },
+  ...(PUBLISHED_CASE_RESULTS.length > 0 ? [{ label: 'Case Results', href: '#case-results' }] : []),
   { label: 'Attorney Profile', href: '#about-attorney' },
   { label: 'Fees', href: '#fee-transparency' },
   { label: 'FAQ', href: '#faq' },
-] as const;
+];
 
 const DRAWER_TITLE_ID = 'mobile-nav-title';
 

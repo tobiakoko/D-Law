@@ -1,6 +1,6 @@
 import { ArrowUp, Clock, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { OfficialSeal } from '~/components/OfficialSeal';
-import { CONTACT_INFO, LEGAL_NOTICES, PRACTICE_AREAS } from '~/data/firm';
+import { CONTACT_INFO, LEGAL_NOTICES, PRACTICE_AREAS, PUBLISHED_CASE_RESULTS } from '~/data/firm';
 
 interface FooterProps {
   onOpenConsultation: (practiceAreaId?: string) => void;
@@ -8,7 +8,7 @@ interface FooterProps {
 
 const FIRM_LINKS = [
   { label: 'About Attorney Prempeh', href: '#about-attorney' },
-  { label: 'Notable Case Results', href: '#case-results' },
+  ...(PUBLISHED_CASE_RESULTS.length > 0 ? [{ label: 'Notable Case Results', href: '#case-results' }] : []),
   { label: 'Fee Transparency', href: '#fee-transparency' },
   { label: 'Client Testimonials', href: '#testimonials' },
   { label: 'FAQ', href: '#faq' },

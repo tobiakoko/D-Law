@@ -93,7 +93,7 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ---
 
 ## T10 — Content & compliance ⚠️ (launch blocker)
-- [ ] ⚠️ Attorney confirms every dollar figure, case count, and outcome in `CASE_RESULTS`/`VerdictsTicker`/`Testimonials` — or replace/remove. *(All tagged `TODO(attorney)` in `app/data/firm.ts`.)*
+- [ ] ⚠️ Attorney confirms every dollar figure, case count, and outcome in `CASE_RESULTS`/`VerdictsTicker`/`Testimonials` — or replace/remove. *(Unverified results are now hidden via `verified: false` and invented counts removed, so nothing unverified renders; attorney sign-off still needed to publish any.)*
 - [x] Add Florida Bar results disclaimer ("Prior results do not guarantee a similar outcome") near verdicts/testimonials. *(VerdictsTicker footnote, Testimonials note, footer advertising notice — text in `LEGAL_NOTICES`.)*
 - [ ] ⚠️ Confirm testimonials are real/consented (text-only unless real client photos with consent). *(Code: text-only; redesign's invented quotes replaced with the previous site's reviews verbatim — consent still needed.)*
 - ✅ No unverified figures ship; disclaimer present.
@@ -119,9 +119,9 @@ Port each redesign component into `app/sections/` or `app/components/` per CLAUD
 ## Client inputs needed (⚠️ blockers for launch, collected here)
 Fill these before go-live; each is a `TODO(attorney)` in code (`grep -rn "TODO(attorney)" app`):
 1. **Phone numbers** — confirm `(813) 879-5919` is the main office line (now live in `CONTACT_INFO.phone`); provide real **cell** and **fax** (currently `null` → hidden). `app/data/firm.ts` `CONTACT_INFO`.
-2. **Case results** — verify every result in `CASE_RESULTS` (`$750,000`, `$1,800,000`, dismissals, asylum, EOIR, mediation) against real closed matters, or replace/remove. These came from the AI-generated redesign.
-3. **Counts & stats** — verify `casesCount` / `clientOutcomes` per practice area, "1,000+ matters resolved" (`FIRM_STATS`, `HERO_HIGHLIGHTS`) and "Over 1,000 clients served" (`TESTIMONIAL_HIGHLIGHTS`).
-4. **Court admissions** — confirm federal district court admission(s) before re-adding that claim (removed from hero/credentials for now).
+2. **Case results** — the six drafted results in `CASE_RESULTS` (`$750,000`, `$1,800,000`, dismissals, asylum, EOIR, mediation) came from the AI-generated redesign and are **hidden** (`verified: false`). The section and its nav/footer links appear once any result is set to `verified: true` after the attorney confirms it against a real closed matter.
+3. **Counts & stats** — confirm "800+ Satisfied Clients" (`FIRM_STATS`; taken from the firm's previous site). The invented "1,000+" claims and per-area `casesCount` / `clientOutcomes` were removed; supply verified ones if wanted (they render only when present).
+4. **Court admissions** — confirm federal district court admission(s) before re-adding that claim (removed from hero, credentials, stats and criminal-defense copy for now).
 5. **Fee arrangements** — confirm contingency terms, flat fees, payment plans and free evaluations in `FEE_PLANS` / FAQ match firm practice.
 6. **Email** — confirm `info@oseiprempeh.com` receives consultation requests (the form's `mailto:` target).
 7. **Office hours** — confirm `Mon - Sat: 8:00 AM - 8:00 PM` (also in JSON-LD `openingHours`).

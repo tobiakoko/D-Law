@@ -62,15 +62,15 @@ export const CONTACT_INFO: ContactInfo = {
 // Practice areas
 // ---------------------------------------------------------------------------
 
-// TODO(attorney): verify every `casesCount` and `clientOutcomes` figure
-// (bar-advertising compliance) or replace with non-numeric copy.
+// `casesCount` (e.g. "300+ cases handled") and `clientOutcomes` are optional and
+// only rendered when present. The redesign's invented figures were removed;
+// TODO(attorney): supply verified counts/outcome summaries if wanted.
 export const PRACTICE_AREAS: PracticeArea[] = [
   {
     id: 'immigration',
     title: 'Immigration Law',
     shortDesc:
       'Navigate complex immigration processes with confidence, from visa applications to permanent residency and citizenship.',
-    casesCount: '800+ cases handled',
     iconName: 'Globe',
     overview:
       'Attorney Osei K. Prempeh brings personal understanding and seasoned expertise to federal immigration proceedings. As an immigrant himself, he understands the emotional weight and profound life impact of every petition.',
@@ -82,15 +82,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Deportation Defense & Removal Proceedings',
       'Consular Processing & Travel Waivers',
     ],
-    clientOutcomes:
-      'Successfully guided over 800 individuals and families through USCIS approvals, green card issuances, and citizenship oaths.',
   },
   {
     id: 'personal-injury',
     title: 'Personal Injury',
     shortDesc:
       'When life takes an unexpected turn, we fight for the full financial compensation and medical care you and your family deserve.',
-    casesCount: '450+ cases handled',
     iconName: 'Shield',
     overview:
       'Our personal injury practice is built on relentless advocacy. We stand between injured clients and aggressive insurance carriers to secure compensation for medical expenses, lost wages, and long-term suffering.',
@@ -102,15 +99,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Catastrophic Injury Settlements',
       'Insurance Bad Faith Negotiation',
     ],
-    clientOutcomes:
-      'Recovered millions in financial settlements and verdicts for injured accident victims across Central Florida.',
   },
   {
     id: 'international-business',
     title: 'International Business',
     shortDesc:
       'Expand and protect your enterprise globally with strategic cross-border transaction guidance and regulatory compliance.',
-    casesCount: '300+ cases handled',
     iconName: 'Scale',
     overview:
       'Holding a Master of Laws (LL.M.) in International Business Law from Stetson University, Attorney Prempeh advises multi-jurisdictional ventures on contract enforcement, trade regulations, and international partnerships.',
@@ -122,15 +116,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'International Dispute Resolution & Arbitration',
       'Import / Export Licensing and Due Diligence',
     ],
-    clientOutcomes:
-      'Counseled international entrepreneurs and multinational firms in structuring multi-million dollar cross-border deals.',
   },
   {
     id: 'family-law',
     title: 'Family Law',
     shortDesc:
       'Protecting what matters most during life transitions with compassionate, dignified counsel through divorce, custody, and adoption.',
-    casesCount: '600+ cases handled',
     iconName: 'Users',
     overview:
       'Family disputes require legal acumen tempered with empathy and dispute mediation skills. Attorney Prempeh provides level-headed guidance aimed at preserving familial relationships and child well-being.',
@@ -142,15 +133,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Pre-Nuptial & Post-Nuptial Agreements',
       'Family Mediation & Alternative Dispute Resolution',
     ],
-    clientOutcomes:
-      'Resolved hundreds of complex domestic matters with an emphasis on equitable solutions and minimizing courtroom trauma.',
   },
   {
     id: 'contract-disputes',
     title: 'Contract Disputes',
     shortDesc:
       'When business agreements break down, we step in to resolve complex commercial disputes efficiently, safeguarding your bottom line.',
-    casesCount: '350+ cases handled',
     iconName: 'Gavel',
     overview:
       'Commercial contracts form the backbone of your enterprise. When a party fails to uphold contractual terms, our litigation and mediation expertise protects your financial interests and business reputation.',
@@ -162,15 +150,12 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Debt Recovery & Settlement Negotiations',
       'Pre-Litigation Strategic Mediation',
     ],
-    clientOutcomes:
-      'Protected commercial assets and secured favorable outcomes for Tampa Bay entrepreneurs and mid-sized enterprises.',
   },
   {
     id: 'criminal-defense',
     title: 'Criminal Defense',
     shortDesc:
-      'Your freedom and future are our top priority. Aggressive advocacy and meticulous preparation against all state and federal charges.',
-    casesCount: '500+ cases handled',
+      'Your freedom and future are our top priority. Aggressive advocacy and meticulous preparation against criminal charges in Florida courts.',
     iconName: 'ShieldAlert',
     overview:
       'Facing criminal allegations is one of the most frightening experiences in life. We scrutinize evidence, challenge improper police procedures, and fight tirelessly for charge dismissals, reductions, or acquittals.',
@@ -182,8 +167,6 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       'Probation Violation Hearings',
       'Record Sealing & Expungement Petitions',
     ],
-    clientOutcomes:
-      'Defended hundreds of individuals in Florida courts, achieving dismissals, acquitted charges, and favorable plea alternatives.',
   },
 ];
 
@@ -232,10 +215,10 @@ export type UrgencyId = (typeof URGENCY_OPTIONS)[number]['id'];
 // Headline stats & highlights
 // ---------------------------------------------------------------------------
 
-// TODO(attorney): verify "1,000+ matters resolved" (or replace with non-numeric copy).
+// TODO(attorney): confirm "800+ satisfied clients" (the figure from the firm's previous site).
 export const FIRM_STATS: FirmStat[] = [
   { id: 'years', value: '20+', label: 'Years of Experience', detail: 'Continuously licensed since March 2004' },
-  { id: 'matters', value: '1,000+', label: 'Matters Resolved', detail: 'Across state, federal & immigration courts' },
+  { id: 'clients', value: '800+', label: 'Satisfied Clients', detail: 'Individuals, families & businesses' },
   {
     id: 'areas',
     value: String(PRACTICE_AREAS.length),
@@ -245,11 +228,10 @@ export const FIRM_STATS: FirmStat[] = [
   { id: 'access', value: 'Direct', label: 'Attorney Access', detail: 'You work with Attorney Prempeh personally' },
 ];
 
-// TODO(attorney): confirm federal-court admission and the "1,000+" figure.
 export const HERO_HIGHLIGHTS: string[] = [
   'Admitted to The Florida Bar (2004)',
   'Stetson Law LL.M. in International Business',
-  '1,000+ Successfully Resolved Matters',
+  'Attorney, Mediator & Counselor at Law',
   'Personal Injury: No Fee Unless We Win',
 ];
 
@@ -337,7 +319,6 @@ export const CREDENTIALS: Credential[] = [
     degree: 'Licensed Attorney & Counselor at Law',
     year: 'March 26, 2004',
     type: 'license',
-    // TODO(attorney): confirm federal district court admission(s) before keeping that claim.
     detail:
       'Licensed in good standing to practice before all Florida State Courts. Over 20 years of continuous active practice.',
   },
@@ -388,9 +369,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-// TODO(attorney): verify or remove the client-count / rating claims.
 export const TESTIMONIAL_HIGHLIGHTS: string[] = [
-  'Over 1,000 clients served in Florida',
   'Clients consistently praise clear, responsive communication',
   'Direct attorney access — not handed off to case managers',
 ];
@@ -403,12 +382,16 @@ export const TESTIMONIAL_HIGHLIGHTS: string[] = [
 // tribunals) against real, closed matters — or replace/remove. These came from
 // the AI-generated redesign and are unverified. Florida Bar Rule 4-7.13/4-7.14
 // requires past results to be objectively verifiable.
+// Only results with `verified: true` are published (the whole section and its
+// nav links stay hidden while none are). Flip a result to `true` only after
+// the attorney confirms it against a real, closed matter.
 export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-1',
     category: 'Personal Injury',
+    verified: false,
     practiceAreaId: 'personal-injury',
-    headline: '$750,000 Recovery', // TODO(attorney): verify
+    headline: '$750,000 Recovery',
     matter: 'Severe rear-end highway collision on I-275 requiring spinal treatment.',
     outcome: 'Full insurance policy limit settlement secured without protracted trial.',
     courtOrAgency: 'Hillsborough County Circuit Court',
@@ -416,8 +399,9 @@ export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-2',
     category: 'Immigration Law',
+    verified: false,
     practiceAreaId: 'immigration',
-    headline: 'Asylum & Residency Approved', // TODO(attorney): verify
+    headline: 'Asylum & Residency Approved',
     matter: 'Complex humanitarian asylum petition pending over 3 years.',
     outcome: 'Successful USCIS interview defense and issuance of permanent residency.',
     courtOrAgency: 'USCIS Tampa Field Office',
@@ -425,8 +409,9 @@ export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-3',
     category: 'International Business',
+    verified: false,
     practiceAreaId: 'international-business',
-    headline: '$1,800,000 Trade Contract Enforced', // TODO(attorney): verify
+    headline: '$1,800,000 Trade Contract Enforced',
     matter: 'Cross-border supplier dispute between multinational exporter and Florida distributor.',
     outcome: 'Arbitration award in client’s favor with full restitution and contract reaffirmation.',
     courtOrAgency: 'International Dispute Panel / Commercial ADR',
@@ -434,8 +419,9 @@ export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-4',
     category: 'Criminal Defense',
+    verified: false,
     practiceAreaId: 'criminal-defense',
-    headline: 'Complete Charge Dismissal', // TODO(attorney): verify
+    headline: 'Complete Charge Dismissal',
     matter: 'Client facing felony allegations based on questionable traffic stop and vehicle search.',
     outcome: 'Court granted motion to suppress unconstitutional evidence; all charges dropped.',
     courtOrAgency: '13th Judicial Circuit Court of Florida',
@@ -443,8 +429,9 @@ export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-5',
     category: 'Family Law & Mediation',
+    verified: false,
     practiceAreaId: 'family-law',
-    headline: 'High-Asset Amicable Resolution', // TODO(attorney): verify
+    headline: 'High-Asset Amicable Resolution',
     matter: 'Contested multi-property dissolution of marriage and parental timesharing.',
     outcome: 'Private mediation secured full asset protection and balanced custody plan.',
     courtOrAgency: 'Tampa Bay Family Court Mediation',
@@ -452,13 +439,16 @@ export const CASE_RESULTS: CaseResult[] = [
   {
     id: 'res-6',
     category: 'Immigration Law',
+    verified: false,
     practiceAreaId: 'immigration',
-    headline: 'Deportation Proceedings Terminated', // TODO(attorney): verify
+    headline: 'Deportation Proceedings Terminated',
     matter: 'Individual facing deportation under complex statutory grounds.',
     outcome: 'Cancellation of removal granted; path to permanent legal residency restored.',
     courtOrAgency: 'Executive Office for Immigration Review (EOIR)',
   },
 ];
+
+export const PUBLISHED_CASE_RESULTS = CASE_RESULTS.filter((r) => r.verified);
 
 // ---------------------------------------------------------------------------
 // Fees

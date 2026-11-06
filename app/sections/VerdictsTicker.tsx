@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import { ArrowUpRight, CheckCircle2, Scale } from 'lucide-react';
-import { CASE_RESULTS, LEGAL_NOTICES } from '~/data/firm';
+import { LEGAL_NOTICES, PUBLISHED_CASE_RESULTS } from '~/data/firm';
 
 interface VerdictsTickerProps {
   onOpenConsultation: (practiceAreaId?: string) => void;
 }
 
 const ALL = 'all';
-const CATEGORIES = [ALL, ...new Set(CASE_RESULTS.map((r) => r.category))];
+const CATEGORIES = [ALL, ...new Set(PUBLISHED_CASE_RESULTS.map((r) => r.category))];
 
 export function VerdictsTicker({ onOpenConsultation }: VerdictsTickerProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>(ALL);
 
+  if (PUBLISHED_CASE_RESULTS.length === 0) return null;
+
   const filtered =
-    selectedCategory === ALL ? CASE_RESULTS : CASE_RESULTS.filter((r) => r.category === selectedCategory);
+    selectedCategory === ALL
+      ? PUBLISHED_CASE_RESULTS
+      : PUBLISHED_CASE_RESULTS.filter((r) => r.category === selectedCategory);
 
   return (
     <section
