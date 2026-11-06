@@ -1,11 +1,12 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { FAQ_ITEMS, PRACTICE_AREAS } from '~/data/firm';
+import { CASE_RESULTS, FAQ_ITEMS, PRACTICE_AREAS, PUBLISHED_CASE_RESULTS } from '~/data/firm';
 import { ABOUT_TABS, AboutAttorney } from '~/sections/AboutAttorney';
 import { FaqSection, filterFaqs } from '~/sections/FaqSection';
 import { Navbar } from '~/sections/Navbar';
 import { filterPracticeAreas, PracticeAreas } from '~/sections/PracticeAreas';
+import { VerdictsTicker } from '~/sections/VerdictsTicker';
 
 describe('FaqSection (single-open accordion)', () => {
   it('opens the first item by default and keeps only one open at a time', async () => {
@@ -141,5 +142,20 @@ describe('AboutAttorney tabs', () => {
     render(<AboutAttorney />);
     expect(screen.getByText('Juris Doctor (J.D.)')).not.toBeVisible();
     expect(screen.getByText('Arrival in the United States')).toBeVisible();
+  });
+});
+
+describe('Case results (bar-advertising gate)', () => {
+  it('publishes only attorney-verified results', () => {
+    expect(PUBLISHED_CASE_RESULTS.every((r) => r.verified)).toBe(true);
+    expect(PUBLISHED_CASE_RESULTS).toEqual(CASE_RESULTS.filter((r) => r.verified));
+  });
+
+  it('never renders an unverified result', () => {
+    const { container } = render(<VerdictsTicker onOpenConsultation={vi.fn()} />);
+    for (const r of CASE_RESULTS.filter((c) => !c.verified)) {
+      expect(container).not.toHaveTextContent(r.headline);
+    }
+    if (PUBLISHED_CASE_RESULTS.length === 0) expect(container).toBeEmptyDOMElement();
   });
 });

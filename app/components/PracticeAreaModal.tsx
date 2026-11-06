@@ -41,9 +41,11 @@ export function PracticeAreaModal({ practiceArea, onClose, onBookConsultation }:
               {practiceArea.shortDesc}
             </p>
 
-            <p className="mt-4 inline-flex items-center gap-2 rounded border border-accent-hover/30 bg-accent-hover/15 px-3 py-1 font-mono text-xs font-medium text-accent-hover">
-              {practiceArea.casesCount}
-            </p>
+            {practiceArea.casesCount && (
+              <p className="mt-4 inline-flex items-center gap-2 rounded border border-accent-hover/30 bg-accent-hover/15 px-3 py-1 font-mono text-xs font-medium text-accent-hover">
+                {practiceArea.casesCount}
+              </p>
+            )}
           </div>
 
           <div className="max-h-[60vh] space-y-6 overflow-y-auto p-6 text-stone-800 sm:p-8">
@@ -69,17 +71,19 @@ export function PracticeAreaModal({ practiceArea, onClose, onBookConsultation }:
               </ul>
             </div>
 
-            <div className="rounded-xl border border-cream-200 bg-cream-100 p-4">
-              <div className="flex items-start gap-3">
-                <FileText className="mt-0.5 h-5 w-5 shrink-0 text-accent-ink" aria-hidden="true" />
-                <div>
-                  <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-stone-900">
-                    Client Outcomes
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-stone-700">{practiceArea.clientOutcomes}</p>
+            {practiceArea.clientOutcomes && (
+              <div className="rounded-xl border border-cream-200 bg-cream-100 p-4">
+                <div className="flex items-start gap-3">
+                  <FileText className="mt-0.5 h-5 w-5 shrink-0 text-accent-ink" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-stone-900">
+                      Client Outcomes
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-stone-700">{practiceArea.clientOutcomes}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="flex flex-col items-center justify-between gap-3 border-t border-stone-200 bg-stone-50 p-4 sm:flex-row sm:p-6">

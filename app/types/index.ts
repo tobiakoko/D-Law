@@ -2,11 +2,11 @@ export interface PracticeArea {
   id: string;
   title: string;
   shortDesc: string;
-  casesCount: string;
+  casesCount?: string;
   iconName: string;
   overview: string;
   keyServices: string[];
-  clientOutcomes: string;
+  clientOutcomes?: string;
 }
 
 export interface Credential {
@@ -57,6 +57,8 @@ export interface CaseResult {
   outcome: string;
   courtOrAgency: string;
   practiceAreaId: string;
+  /** Attorney-confirmed against a real, closed matter. Unverified results are never rendered. */
+  verified: boolean;
 }
 
 export type ThemePreset = 'heritage-navy' | 'modern-obsidian' | 'slate-copper';

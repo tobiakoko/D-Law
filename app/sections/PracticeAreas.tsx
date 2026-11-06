@@ -88,9 +88,11 @@ export function PracticeAreas({ onSelectPractice, onBookConsultation }: Practice
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-accent/30 bg-accent/10">
                       <Icon className="h-5 w-5 text-accent-ink" aria-hidden="true" />
                     </div>
-                    <span className="font-mono text-xs font-medium tracking-tight text-stone-600">
-                      {practice.casesCount}
-                    </span>
+                    {practice.casesCount && (
+                      <span className="font-mono text-xs font-medium tracking-tight text-stone-600">
+                        {practice.casesCount}
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-xl font-bold text-ink sm:text-2xl">{practice.title}</h3>
