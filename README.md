@@ -36,7 +36,7 @@ Static hosting only: upload **`build/client/`** (Vercel / Netlify / Cloudflare P
 curl -s https://www.oseiprempeh.com/ | grep -o "Immigration Law"
 ```
 
-Set security headers at the host (`X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, a `'self'` CSP). Full checklist: [`BUILD.md`](BUILD.md) §7 and §9.
+Security headers (CSP, `nosniff`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`) and long-lived caching for hashed `/assets/*` are set in [`vercel.json`](vercel.json). On another host, copy those headers into its config. Full checklist: [`BUILD.md`](BUILD.md) §7 and §9.
 
 ## Where things live
 

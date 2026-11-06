@@ -5,6 +5,13 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # The project is pinned to React Router 7 (CLAUDE.md §3). A major upgrade is a
+    # deliberate, tested change, not an automated bump.
+    ignore:
+      - dependency-name: 'react-router'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@react-router/*'
+        update-types: ['version-update:semver-major']
     groups:
       react-router:
         patterns: ['react-router', '@react-router/*']
