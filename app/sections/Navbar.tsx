@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Calendar, Menu, Phone, X } from 'lucide-react';
+import { FirmLogo } from '~/components/FirmLogo';
 import { Modal } from '~/components/Modal';
 import { CONTACT_INFO } from '~/data/firm';
 
@@ -30,12 +31,10 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             className="group flex items-center gap-3 rounded-sm py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-hover"
             aria-label={`${CONTACT_INFO.officeName} — home`}
           >
-            <span
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent-hover/40 bg-brand-surface font-serif text-[13px] font-bold tracking-tight text-accent-hover shadow-sm transition-colors group-hover:border-accent-hover"
-              aria-hidden="true"
-            >
-              OKP
-            </span>
+            <FirmLogo
+              size={44}
+              className="shadow-sm ring-2 ring-accent-hover/40 transition-shadow group-hover:ring-accent-hover"
+            />
             <span className="flex flex-col">
               <span className="whitespace-nowrap font-brand text-lg font-bold tracking-wider text-stone-100 transition-colors group-hover:text-accent-hover sm:text-xl">
                 {CONTACT_INFO.attorneyName.toUpperCase()}
@@ -94,12 +93,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
           <div>
             <div className="flex items-center justify-between border-b border-stone-800 pb-6">
               <div className="flex items-center gap-2.5">
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-accent bg-brand-surface font-serif text-[11px] font-bold tracking-tight text-accent"
-                  aria-hidden="true"
-                >
-                  OKP
-                </span>
+                <FirmLogo size={36} className="ring-2 ring-accent/60" />
                 <div>
                   <h2 id={DRAWER_TITLE_ID} className="font-brand text-base font-bold tracking-wide text-white">
                     {CONTACT_INFO.attorneyName}
