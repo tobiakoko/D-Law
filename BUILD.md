@@ -115,6 +115,7 @@ This is a **static site**. Deploy the contents of `build/client/`.
 - **Security headers** (set at the host, since there's no server): add
   `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`,
   and a conservative `Content-Security-Policy` allowing `'self'` + your self-hosted font/image origins. (With fonts self-hosted and no third-party scripts, CSP stays simple.)
+  **On Vercel these are already in `vercel.json`.** The CSP allows `'unsafe-inline'` for scripts because React Router's prerendered hydration scripts are inline and change every build; nothing loads from other origins. Check after deploy: `curl -sI https://www.oseiprempeh.com/ | grep -i content-security-policy`.
 
 **Post-deploy smoke check:**
 ```bash
